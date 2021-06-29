@@ -1,3 +1,4 @@
+//Constructor de Cervezas
 class Cerveza{
     constructor(nombre, estilo, envase, precio, stock){
     this.nombre = nombre;
@@ -9,6 +10,7 @@ class Cerveza{
    
 };
 
+//Variedades de Cervezas
 var microIpa = new Cerveza("Micro IPA", "Lupuladas", "Lata", 200, 1000);
 var ipaYanky = new Cerveza("IPA Yanky", "Lupuladas", "Lata", 200, 500);
 var brutIpa = new Cerveza("Brut IPA", "Lupuladas", "Lata", 250, 50);
@@ -23,20 +25,23 @@ var pinky = new Cerveza("Pinky y Cerebro", "Sour", "Lata", 280, 250);
 var rice = new Cerveza("Rice Rice Baby", "Lager", "Lata", 180, 25);
 var pilsen = new Cerveza("Hoppy Pilsen", "Lager", "Lata", 150, 24);
 
+//Listas de Cervezas por Estilos
 var lupuladasArray = [microIpa, ipaYanky, brutIpa, neipa];
 var maltosasArray = [stoutImperio, britishRed];
 var sourArray = [mandagose, pinky];
 var lagerArray = [rice, pilsen];
 
+var cervezasArray = [lupuladasArray, maltosasArray, sourArray, lagerArray];
+
+//Función Ordenar por precio de menor a mayor
 const ordenarPorPrecio = (array) => array.sort(function(a, b) {return a.precio - b.precio;});
 
 console.log(ordenarPorPrecio(lupuladasArray));
 
-
-var cervezasArray = [lupuladasArray, maltosasArray, sourArray, lagerArray];
-
+//Carrito de pédido
 var pedido =[];
 
+//Función calcula suma a pagar
 const montoAPagar = (array) => {
     let costo = 0;
     for (let i = 0; i < array.length; i++){
@@ -45,6 +50,7 @@ const montoAPagar = (array) => {
     return costo;
     };
 
+//Función nombres de latas compradas 
 var packDeLatas = (array) => {
     let pack= [];
     for (let i = 0; i < array.length; i++){
@@ -53,9 +59,10 @@ var packDeLatas = (array) => {
     return pack.join(", ");
 }
 
-
+//Primer prompt +18
 var edad = parseInt(prompt("¿qué edad tiene?"));
 
+//Menú y eleción de latas
 const menuLatas = () => { 
     var eleccionDeLata = parseInt((prompt(`Elegí un estilo de cerveza por su número\n1-Lupuladas\n2-Maltosas\n3-Sour\n4-Lager`)));
     
@@ -83,7 +90,7 @@ const menuLatas = () => {
         }
 };        
 
-
+//Objeto para crear Usuarios
 function Usuario(nombre, apellido, edad, direccion){
     this.nombre = nombre,
     this.apellido = apellido,
@@ -94,8 +101,7 @@ function Usuario(nombre, apellido, edad, direccion){
 
 
 
-
-
+//Función Final para que compre el Usuario y se registre
 const compraMayorDeEdad = (x) => {
     if (x >= 18) {
 
@@ -123,10 +129,11 @@ const compraMayorDeEdad = (x) => {
         console.log(nuevoUsuario);
        
        
-        alert(nuevoUsuario.nombre + " " + nuevoUsuario.apellido + ` tu pedido de ${pedido.length} latas Laurus a sido confirmado será entregado en ` + nuevoUsuario.direccion +  `. costo a abonar: $ ${montoAPagar(pedido)}\nSu pedido consta de las siguientes latas ${packDeLatas(pedido)} ¡Gracias por su compra!`);
+        alert(nuevoUsuario.nombre + " " + nuevoUsuario.apellido + ` tu pedido de ${pedido.length} latas Laurus a sido confirmado será entregado en ` + nuevoUsuario.direccion +  `.\nSubtotal: $ ${montoAPagar(pedido)}\nCosto final más IVA: $ ${montoAPagar(pedido) * 1.21}\nSu pedido consta de las siguientes latas: ${packDeLatas(pedido)}\n¡Gracias por su compra!`);
     
     }else{ alert("Ud. es menor de edad no puede comprar bebidas alcohólicas")};
 
 };
+
 
 compraMayorDeEdad(edad);
