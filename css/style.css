@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: flex-end;
+    height: 80px;
+    background-color: #111;
+    
+}
+
+.shopping-cart {
+    width: 4rem;
+    height: 100%;
+    margin-right: 25px;
+
+}
+
+.logoLaurus{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+}
+
+.logoLaurus img{
+    width: 30%;
+}
+
+.cards-group{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 5rem;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #EEE;
+    border: 1px solid #222;
+    width: 15%;
+    height: auto;
+    overflow: hidden;
+    margin: 1rem;
+    
+}
+
+.card img {
+    border-bottom: 1px solid #333;
+    max-width: 100%;
+    height: auto;
+    
+}
+
+.card-button{
+    background-color: #444;
+    color: beige;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 2rem;
+    width: 100%;
+    height: auto;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+    height: 80px;
+    background-color: #111;
+    
+}
+
