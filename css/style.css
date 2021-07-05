@@ -17,6 +17,11 @@ header {
     
 }
 
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .boton-header{
     font-family: 'Montserrat', sans-serif;
@@ -130,4 +135,34 @@ footer a:hover{
     width: 2rem;
     height: 100%;
     margin-right: 0.5rem;
+}
+
+#carrito {
+    width: fit-content;
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 12px;
+    background-color:#EEE;
+    box-shadow: 0px 10px 25px rgb(121, 121, 121);
+    font-family: 'Montserrat', sans-serif; 
+}
+
+
+
+#carrito p{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#nombreID{
+    display: inline-flex;
+    font-size: 2rem!important;
+    margin-top: 1rem;
+    
+}
+
+.negrita{
+    font-weight: bolder;
 }
