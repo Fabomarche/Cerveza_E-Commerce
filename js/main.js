@@ -131,7 +131,7 @@ const compraMayorDeEdad = (x) => {
         sessionStorage.setItem("nuevoUsuario", JSON.stringify(nuevoUsuario));
        
        
-        alert(nuevoUsuario.nombre + " " + nuevoUsuario.apellido + ` tu pedido de ${pedido.length} latas Laurus a sido confirmado será entregado en ` + nuevoUsuario.direccion +  `.\nSubtotal: $ ${montoAPagar(pedido)}\nCosto final más IVA: $ ${montoAPagar(pedido) * 1.21}\nSu pedido consta de las siguientes latas: ${packDeLatas(pedido)}\n¡Gracias por su compra!`);
+        alert(nuevoUsuario.nombre + " " + nuevoUsuario.apellido + ` tu pedido de ${pedido.length} latas Laurus a sido confirmado será entregado en ` + nuevoUsuario.direccion +  `.\nSubtotal: $ ${montoAPagar(pedido)}\nCosto final más IVA: $ ${(montoAPagar(pedido) * 1.21).toFixed(2)}\nSu pedido consta de las siguientes latas: ${packDeLatas(pedido)}\n¡Gracias por su compra!`);
         
 
 
@@ -157,5 +157,5 @@ direccionID.innerHTML = usuarioSessionStorage.direccion;
 cantidadLatas.innerHTML = pedido.length;
 listaLatas.innerHTML = packDeLatas(pedido);
 subtotal.innerHTML = montoAPagar(pedido);
-total.innerHTML = montoAPagar(pedido) * 1.21;
+total.innerHTML = (montoAPagar(pedido) * 1.21).toFixed(2);
 
