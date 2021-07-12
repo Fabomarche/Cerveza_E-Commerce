@@ -1,4 +1,5 @@
 var numeroDeLatas = document.getElementById("numeroDeLatas");
+var pagarBtn = document.getElementById("pagarBtn");
 
 var cantidadDeLatas = 0; //Número de latas en carrito HEADER
 var mnjCantidadLatas = document.getElementById("mnjCantidadLatas")//en msj final carrito
@@ -29,4 +30,8 @@ const aniadirMicroIpa = () => {
 
 const abrirCarrito = () => {
     carrito.style.display = "block";
+}
+
+const pagar = () => {
+    iniciarSesion.style.display = "block";
 }
