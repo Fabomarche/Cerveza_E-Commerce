@@ -7,7 +7,6 @@ class Cerveza{
     this.precio = precio;
     this.stock = stock;
     };
-   
 };
 
 //Variedades de Cervezas
