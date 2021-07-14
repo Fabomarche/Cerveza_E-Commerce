@@ -5,6 +5,11 @@ var pagarBtn = document.getElementById("pagarBtn");
 var cantidadDeLatas = 0; //Número de latas en carrito HEADER
 var mnjCantidadLatas = document.getElementById("mnjCantidadLatas")//en msj final carrito
 
+var subtotal = document.getElementById("subtotal");
+var subtotalANum = parseInt((document.getElementById("subtotal")).innerText);
+
+var total = document.getElementById("total");
+
 var pedido =[];//Carrito de pédido
 
 const listaDeLatas = document.getElementById("listaDeLatas")
@@ -13,7 +18,10 @@ const aniadirBrutIpa = () => {
     cantidadDeLatas += 1
     numeroDeLatas.innerText = cantidadDeLatas.toString();
     mnjCantidadLatas.innerText = cantidadDeLatas.toString();
-    pedido.push(brutIpa);
+    pedido.unshift(brutIpa);
+    subtotalANum += pedido[0].precio;
+    subtotal.innerHTML = subtotalANum;
+    total.innerHTML = (subtotalANum * 1.21).toFixed(2);
     
     let elemento = document.createElement('div');
     elemento.innerHTML = `
@@ -31,7 +39,10 @@ const aniadirIpaYanky = () => {
     cantidadDeLatas += 1
     numeroDeLatas.innerText = cantidadDeLatas.toString();
     mnjCantidadLatas.innerText = cantidadDeLatas.toString();
-    pedido.push(ipaYanky);
+    pedido.unshift(ipaYanky);
+    subtotalANum += pedido[0].precio;
+    subtotal.innerHTML = subtotalANum;
+    total.innerHTML = subtotalANum * 1.21;
     
     let elemento = document.createElement('div');
     elemento.innerHTML = `
@@ -48,7 +59,10 @@ const aniadirMicroIpa = () => {
     cantidadDeLatas += 1
     numeroDeLatas.innerText = cantidadDeLatas.toString();
     mnjCantidadLatas.innerText = cantidadDeLatas.toString();
-    pedido.push(microIpa);
+    pedido.unshift(microIpa);
+    subtotalANum += pedido[0].precio;
+    subtotal.innerHTML = subtotalANum;
+    total.innerHTML = (subtotalANum * 1.21).toFixed(2);
     
     let elemento = document.createElement('div');
     elemento.innerHTML = `
@@ -67,5 +81,14 @@ const abrirCarrito = () => {
 }
 
 const pagar = () => {
-    iniciarSesion.style.display = "block";
+    if (usuarioSessionStorage = null) {
+        iniciarSesionBtn()
+    }
+    gracias.style.display = "block";
 }
+
+const sacarMensajeGracias = () => {
+    gracias.style.display = "none";
+    
+}
+
