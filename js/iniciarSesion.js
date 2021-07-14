@@ -17,6 +17,12 @@ const iniciarSesionBtn = () => {
     iniciarSesion.style.display = "block";
 }
 
+const imprimirDatosEnCarrito= () => {
+    var usuarioSessionStorage = JSON.parse(sessionStorage.getItem("nuevoUsuario"));
+    nombreID.innerHTML = usuarioSessionStorage.nombre + " " + usuarioSessionStorage.apellido;
+    direccionID.innerHTML = usuarioSessionStorage.direccion;
+}
+
 const logIn = () => {
     let nombre = document.getElementById("nameform").value;
     let apellido = document.getElementById("lastname").value;
@@ -25,10 +31,8 @@ const logIn = () => {
     
     sessionStorage.setItem("nuevoUsuario", JSON.stringify(nuevoUsuario));
 
+    imprimirDatosEnCarrito();
 
     iniciarSesion.style.display = "none";
 };
 
-var usuarioSessionStorage = JSON.parse(sessionStorage.getItem("nuevoUsuario"));
-nombreID.innerHTML = usuarioSessionStorage.nombre + " " + usuarioSessionStorage.apellido;
-direccionID.innerHTML = usuarioSessionStorage.direccion;
