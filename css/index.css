@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: "h h" "m m" "f f"; }
+
+/*----------HEADER-------*/
+header {
+  grid-area: h;
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  background-color: #111; }
+  header #carritoLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    border-radius: 35px;
+    padding: 0 0.5rem 0 0.5rem; }
+    header #carritoLink #numeroDeLatas {
+      display: block;
+      color: #F5F5DC;
+      font-size: 3rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      margin-right: 1rem; }
+  header #carritoLink:hover {
+    background-color: #d4188c; }
+  header .btn {
+    font-family: 'Montserrat', sans-serif;
+    color: beige;
+    font-size: 1.3rem;
+    font-weight: 900;
+    margin-left: 1rem;
+    text-decoration: none;
+    background-color: #555;
+    padding: 1rem;
+    margin: 2rem;
+    border-radius: 75px; }
+  header .btn:hover {
+    background-color: #d4188c; }
+  header .shopping-cart {
+    width: 3rem;
+    height: 100%;
+    margin-right: 25px; }
+
+/*----------HEADER END-------*/
+/*----------MAIN-------*/
+main {
+  grid-area: m;
+  display: grid;
+  grid-template-areas: "logo logo" "latas carrito";
+  flex-direction: column;
+  align-items: center;
+  /*----------CARDS-------*/ }
+  main .logoLaurus {
+    grid-area: logo;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem; }
+    main .logoLaurus img {
+      width: 30%; }
+  main .cards-group {
+    grid-area: latas;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: flex-start;
+    margin-bottom: 5rem; }
+    main .cards-group .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #EEE;
+      border: 1px solid #222;
+      width: 25%;
+      height: auto;
+      overflow: hidden;
+      margin: 1rem; }
+      main .cards-group .card img {
+        border-bottom: 1px solid #333;
+        max-width: 100%;
+        height: auto; }
+      main .cards-group .card .card-btn {
+        background-color: #555;
+        border: none;
+        border-radius: 35px;
+        color: beige;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        text-align: center;
+        font-size: 1.3rem;
+        width: 80%;
+        height: auto;
+        padding: 0.5rem;
+        margin-bottom: 0.5rem; }
+      main .cards-group .card .card-btn:hover {
+        background-color: #d4188c; }
+
+/*----------CARDS END-------*/
+/*----------SHOPPPING CART------*/
+#container_pack {
+  grid-area: carrito;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+#carrito {
+  display: none;
+  width: 50%;
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  border: 1px solid #111;
+  border-radius: 12px;
+  background-color: #111;
+  box-shadow: 0px 10px 25px #797979;
+  font-family: 'Montserrat', sans-serif; }
+  #carrito p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: white; }
+  #carrito h2 {
+    font-size: 2rem;
+    background-color: #d4188c;
+    border-radius: 18px;
+    color: white; }
+  #carrito #nombreID {
+    font-size: 2.5rem !important;
+    margin-top: 1rem; }
+  #carrito .negrita {
+    font-weight: bolder; }
+  #carrito #total {
+    font-size: 2.5rem; }
+  #carrito .btn-pagar {
+    font-family: 'Montserrat', sans-serif;
+    color: beige;
+    font-size: 1.3rem;
+    font-weight: 900;
+    margin-left: 1rem;
+    text-decoration: none;
+    background-color: #555;
+    padding: 1rem;
+    margin: 2rem;
+    border: none;
+    border-radius: 75px; }
+  #carrito .btn-pagar:hover {
+    background-color: #d4188c; }
+
+/*----------SHOPPPING CART END------*/
+/*----------------PACK DE LATAS------*/
+#packDelComprador {
+  display: none;
+  width: 50%;
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  border: 1px solid #111;
+  border-radius: 12px;
+  background-color: #111;
+  box-shadow: 0px 10px 25px #797979;
+  font-family: 'Montserrat', sans-serif; }
+  #packDelComprador h2 {
+    font-size: 2rem;
+    background-color: #d4188c;
+    border-radius: 18px;
+    color: white; }
+  #packDelComprador p {
+    font-size: 1rem;
+    font-weight: bolder;
+    margin: 1rem 0 1rem 0;
+    color: white; }
+  #packDelComprador .elementoLata {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  #packDelComprador .imagenLataChica {
+    width: 10%;
+    height: auto; }
+    #packDelComprador .imagenLataChica img {
+      width: 100%; }
+
+/*------------PACK DE LATAS END------*/
+/*----------FOOTER------*/
+footer {
+  grid-area: f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  background-color: #111; }
+  footer p {
+    font-family: 'Montserrat', sans-serif;
+    color: beige;
+    font-size: 1.3rem;
+    margin-left: 1rem; }
+  footer a {
+    color: beige;
+    text-decoration: none; }
+  footer a:hover {
+    color: #ff59bf; }
+  footer .redes {
+    margin-right: 1rem; }
+  footer .footer-icon {
+    fill: #c7c7c7;
+    width: 2rem;
+    height: 100%;
+    margin-right: 0.5rem; }
+
+/*----------FOOTER END------*/
+/*---------MODAL BOX-----------*/
+#modalBackground {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); }
+  #modalBackground #modalContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    margin: 7.5% auto;
+    width: 60%;
+    height: 60%;
+    border-radius: 25px;
+    box-shadow: 0px 25px 75px #3a3a3a; }
+    #modalBackground #modalContent #textModal {
+      font-family: 'Montserrat', sans-serif;
+      color: #222;
+      font-size: 2.5rem;
+      font-weight: bolder;
+      margin: 2% 10% 2% 10%; }
+    #modalBackground #modalContent .modalBtns {
+      font-family: 'Montserrat', sans-serif;
+      color: #222;
+      background-color: white;
+      font-size: 2.5rem;
+      font-weight: bolder;
+      padding: 0 2% 0 2%;
+      width: 25%;
+      margin-top: 2%;
+      border-radius: 12px;
+      box-shadow: 0px 1px 15px #dadada; }
+    #modalBackground #modalContent .modalBtns:hover, #modalBackground #modalContent .modalBtns:focus {
+      color: white;
+      background-color: #d4188c; }
+
+/*---------MODAL BOX END-----------*/
+/*----------INICIO DE SESION END--------*/
+#iniciarSesion {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); }
+  #iniciarSesion #sesionContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    background-color: white;
+    margin: 7.5% auto;
+    width: 50%;
+    height: auto;
+    border-radius: 25px;
+    box-shadow: 0px 25px 75px #3a3a3a;
+    font-family: 'Montserrat', sans-serif;
+    color: #222;
+    font-size: 2.5rem;
+    font-weight: bolder; }
+    #iniciarSesion #sesionContent .Btn-logIn {
+      width: 75%;
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+      color: beige;
+      font-size: 1.3rem;
+      font-weight: 900;
+      text-decoration: none;
+      background-color: #555;
+      padding: 1rem;
+      margin: 2rem;
+      border-radius: 75px; }
+    #iniciarSesion #sesionContent .Btn-logIn:hover {
+      background-color: #d4188c; }
+    #iniciarSesion #sesionContent input {
+      font-family: 'Montserrat', sans-serif;
+      color: #d4188c;
+      font-size: 2rem;
+      font-weight: bolder;
+      text-align: center;
+      width: 75%; }
+
+/*----THANKS FINAL MESSAGE----*/
+#gracias {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); }
+  #gracias p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #222;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    background-color: white;
+    margin: 7.5% auto;
+    width: 60%;
+    height: 40%;
+    border-radius: 25px;
+    box-shadow: 0px 25px 75px #3a3a3a; }
+  #gracias p:hover {
+    background-color: #222;
+    color: #d4188c; }
+
+/*----THANKS FINAL MESSAGE END----*/
