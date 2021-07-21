@@ -23,7 +23,7 @@ const imprimirDatosEnCarrito= () => {
     direccionID.innerHTML = usuarioSessionStorage.direccion;
 }
 
-const logIn = () => {
+/* const logIn = () => {
     let nombre = document.getElementById("nameform").value;
     let apellido = document.getElementById("lastname").value;
     let direccion = document.getElementById("direction").value;
@@ -34,5 +34,18 @@ const logIn = () => {
     imprimirDatosEnCarrito();
 
     iniciarSesion.style.display = "none";
-};
+}; */
+
+$('#logInBtn').click(() => {
+    let nombre = document.getElementById("nameform").value;
+    let apellido = document.getElementById("lastname").value;
+    let direccion = document.getElementById("direction").value;
+    var nuevoUsuario = new Usuario(nombre, apellido, direccion);
+    
+    sessionStorage.setItem("nuevoUsuario", JSON.stringify(nuevoUsuario));
+
+    imprimirDatosEnCarrito();
+
+    iniciarSesion.style.display = "none";}
+    )
 

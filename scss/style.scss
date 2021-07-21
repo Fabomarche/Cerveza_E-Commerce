@@ -51,29 +51,35 @@ header {
         background-color:rgb(212, 24, 140);
     }
 
-    .btn{
-        font-family: 'Montserrat', sans-serif;
-        color: beige;
-        font-size: 1.3rem;
-        font-weight: 900;
-        margin-left: 1rem;
-        text-decoration: none;
-        background-color: #555;
-        padding: 1rem;
-        margin: 2rem;
-        border-radius: 75px;
-    }
+   
 
-    .btn:hover{
-        background-color: rgb(212, 24, 140);
-    }
-
-    .shopping-cart {
-        width: 3rem;
-        height: 100%;
-        margin-right: 25px;
-    }
+  
     
+}
+
+.shopping-cart {
+    width: 3rem;
+    height: 100%;
+    margin-right: 25px;
+}
+
+
+.btn{
+    font-family: 'Montserrat', sans-serif;
+    color: beige;
+    font-size: 1.3rem;
+    font-weight: 900;
+    margin-left: 1rem;
+    text-decoration: none;
+    background-color: #555;
+    padding: 1rem;
+    margin: 2rem;
+    border-radius: 75px;
+    border: none;
+}
+
+.btn:hover{
+    background-color: rgb(212, 24, 140);
 }
 
 /*----------HEADER END-------*/
@@ -122,27 +128,41 @@ main{
             height: auto;
             overflow: hidden;
             margin: 1rem;
-            
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            box-shadow: -3px 6px 15px rgb(51, 59, 59);
+            border-radius: 12px;
+                        
             img{
                 border-bottom: 1px solid #333;
                 max-width: 100%;
                 height: auto;  
             }          
 
-            .card-btn{
+            .card-title{
+                font-size: 2rem;
+                font-weight: bolder;
+            }
+
+            .card-list{
+                list-style: none;
+                font-size: 1.2rem;
                 
-                background-color: #555;
-                border: none;
-                border-radius: 35px;
-                color: beige;
-                font-family: 'Montserrat', sans-serif;
-                font-weight: bold;
+            }
+
+            .price{
+                font-weight: bolder;
+            }
+
+            .card-btn{
+                @extend .btn;
                 text-align: center;
-                font-size: 1.3rem;
                 width: 80%;
                 height: auto;
                 padding: 0.5rem;
-                margin-bottom: 0.5rem;
+                margin: 0 0 0.5rem 0;
+                border-radius: 35px;
+     
             }
             .card-btn:hover {
                 background-color: rgb(212, 24, 140);
@@ -200,27 +220,13 @@ main{
     
     #total{
         font-size: 2.5rem;
-    }
-    
-    .btn-pagar{
-        font-family: 'Montserrat', sans-serif;
-        color: beige;
-        font-size: 1.3rem;
-        font-weight: 900;
-        margin-left: 1rem;
-        text-decoration: none;
-        background-color: #555;
-        padding: 1rem;
-        margin: 2rem;
-        border: none;
-        border-radius: 75px;
-    }
-
-    .btn-pagar:hover{
-        background-color: rgb(212, 24, 140);
-    }
-    
+    }    
 }
+
+.noMargin{
+    margin: 0;
+}
+
 /*----------SHOPPPING CART END------*/
 
 /*----------------PACK DE LATAS------*/
@@ -247,14 +253,21 @@ main{
     p{
         font-size: 1rem;
         font-weight: bolder;
-        margin: 1rem 0 1rem 0;
+        margin: 1rem 2rem 1rem 0;
         color: white;
+    }
+
+    .cantidadMismaLata{
+        width: 25%;
+        border-style: none;
+        justify-self: flex-end;
+        
     }
 
     .elementoLata{
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: flex-start;
+        align-items:center; 
     }
     
     .imagenLataChica{
@@ -265,7 +278,10 @@ main{
             width: 100%;
         }
     }
+
+   
 }
+
 /*------------PACK DE LATAS END------*/
 
 
@@ -297,11 +313,16 @@ footer {
         margin-right: 1rem;
     }
     
+  
     .footer-icon{
-        fill: #c7c7c7;
+        fill:  beige;
         width: 2rem;
         height: 100%;
         margin-right: 0.5rem;
+    }
+
+    .footer-icon:hover{
+        fill:  rgb(212, 24, 140);
     }
 }
 
@@ -392,24 +413,7 @@ footer {
         font-size: 2.5rem;
         font-weight: bolder;
 
-        .Btn-logIn{
-            width: 75%;
-            border: none;
-            font-family: 'Montserrat', sans-serif;
-            color: beige;
-            font-size: 1.3rem;
-            font-weight: 900;
-            text-decoration: none;
-            background-color: #555;
-            padding: 1rem;
-            margin: 2rem;
-            border-radius: 75px;
-
-        }
-
-        .Btn-logIn:hover{
-            background-color: rgb(212, 24, 140);
-        }
+        
         
         input{
             font-family: 'Montserrat', sans-serif;
@@ -423,6 +427,14 @@ footer {
     }
 }
 
+.btn-logIn{
+    @extend .btn;
+    width: 65%;
+}
+
+.btn-logIn:hover{
+    background-color: rgb(212, 24, 140);
+}
 /*----THANKS FINAL MESSAGE----*/
 #gracias{
     display: none;
