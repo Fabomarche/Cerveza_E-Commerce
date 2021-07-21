@@ -14,6 +14,21 @@ var pedido =[];//Carrito de pédido
 
 const listaDeLatas = document.getElementById("listaDeLatas")
 
+/*----------ARRAYS DE LATAS POR ESTILO PARA CONTADOR-----*/
+var pack_microIpa = [];
+var pack_ipaYanky = [];
+var pack_brutIpa = [];
+var pack_hoppySaison = [];
+var pack_stoutImperio = [];
+var pack_britishRed = [];
+var pack_mandagose = [];
+var pack_pinky = [];
+var pack_rice = [];
+var pack_pilsen = [];
+
+
+/*----------FIN ARRAYS DE LATAS POR ESTILO PARA CONTADOR-----*/
+
 const aniadir = (estilo) => {
     cantidadDeLatas += 1
     numeroDeLatas.innerText = cantidadDeLatas.toString();
@@ -22,84 +37,67 @@ const aniadir = (estilo) => {
     subtotalANum += pedido[0].precio;
     subtotal.innerHTML = subtotalANum;
     total.innerHTML = (subtotalANum * 1.21).toFixed(2);
-    
+
     let elemento = document.createElement('div');
+    elemento.className = `contenedorMiniLata`;//clase al contenedor??
     elemento.innerHTML = `
         <div class="elementoLata">
             
-            <div class="imagenLataChica">
-            <img src="${estilo.rutaImagen}" alt="lata de cerveza ${estilo.nombre}">
+            <div class="imagenLataChica" id="mini-${estilo.id}">
+                <img src="${estilo.rutaImagen}" alt="lata de cerveza ${estilo.nombre}">
             </div>
+            
             <p>${estilo.nombre}</p>
+        
+        </div>
+        
+        <div class="contadorMismaLata">
+            <p id="restar-${estilo.id}"><</p>
+            <p id="num-${estilo.id}" class="numMiniLatas">0</p>
+            <p id="sumar-${estilo.id}">></p>
         </div>
     `;
     
-    listaDeLatas.appendChild(elemento);
-}
-
-
-/* const aniadirBrutIpa = () => {
-    cantidadDeLatas += 1
-    numeroDeLatas.innerText = cantidadDeLatas.toString();
-    mnjCantidadLatas.innerText = cantidadDeLatas.toString();
-    pedido.unshift(brutIpa);
-    subtotalANum += pedido[0].precio;
-    subtotal.innerHTML = subtotalANum;
-    total.innerHTML = (subtotalANum * 1.21).toFixed(2);
+    switch (estilo) {
+        case microIpa:
+            pack_microIpa.push(estilo)
+            break;
+        case ipaYanky:
+            pack_ipaYanky.push(estilo)
+            break;
+        case brutIpa:
+            pack_brutIpa.push(estilo)
+            break;
+        case hoppySaison:
+            pack_hoppySaison.push(estilo)
+            break;
+        case stoutImperio:
+            pack_stoutImperio.push(estilo)
+            break;
+        case mandagose:
+            pack_mandagose.push(estilo)
+            break;
+        case britishRed:
+            pack_britishRed.push(estilo);
+            break;
+        case pinky:
+            pack_pinky.push(estilo)
+            break;    
+        case rice:
+            pack_rice.push(estilo)
+            break;
+        case pilsen:
+            pack_pilsen.push(estilo)
+            break;                            
+    }
     
-    let elemento = document.createElement('div');
-    elemento.innerHTML = `
-        <div class="elementoLata">
-            <div class="imagenLataChica">
-            <img src="./images/laurus-brut-ipa.png" alt="lata de cerveza">
-            </div>
-            <p>${brutIpa.nombre}</p>
-        </div>
-    `;
     listaDeLatas.appendChild(elemento);
-}
 
-const aniadirIpaYanky = () => {
-    cantidadDeLatas += 1
-    numeroDeLatas.innerText = cantidadDeLatas.toString();
-    mnjCantidadLatas.innerText = cantidadDeLatas.toString();
-    pedido.unshift(ipaYanky);
-    subtotalANum += pedido[0].precio;
-    subtotal.innerHTML = subtotalANum;
-    total.innerHTML = subtotalANum * 1.21;
+}   
     
-    let elemento = document.createElement('div');
-    elemento.innerHTML = `
-        <div class="elementoLata">
-            <div class="imagenLataChica">
-            <img src="./images/laurus-ipa-yanky.png" alt="lata de cerveza">
-            </div>
-            <p>${ipaYanky.nombre}</p>
-        </div>
-    `;
-    listaDeLatas.appendChild(elemento);
-}
 
-const aniadirMicroIpa = () => {
-    cantidadDeLatas += 1
-    numeroDeLatas.innerText = cantidadDeLatas.toString();
-    mnjCantidadLatas.innerText = cantidadDeLatas.toString();
-    pedido.unshift(microIpa);
-    subtotalANum += pedido[0].precio;
-    subtotal.innerHTML = subtotalANum;
-    total.innerHTML = (subtotalANum * 1.21).toFixed(2);
-    
-    let elemento = document.createElement('div');
-    elemento.innerHTML = `
-        <div class="elementoLata">
-            <div class="imagenLataChica">
-            <img src="./images/laurus-micro-ipa.png" alt="lata de cerveza">
-            </div>
-            <p>${microIpa.nombre}</p>
-        </div>
-    `;
-    listaDeLatas.appendChild(elemento);
-} */
+
+
 
 const abrirCarrito = () => {
     carrito.style.display = "block";

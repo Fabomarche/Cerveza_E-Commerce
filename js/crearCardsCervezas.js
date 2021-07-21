@@ -16,7 +16,8 @@ const CardsCreator = () => {
             <button class="card-btn" onclick="aniadir(${cerveza.id})">Agregar</button>
         </div>`);
     }
-    $('.cards-group').html(showCards);}
+    $('.cards-group').html(showCards);
+}
     
 
 CardsCreator();

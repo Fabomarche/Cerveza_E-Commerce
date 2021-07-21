@@ -160,6 +160,10 @@ main {
 .noMargin {
   margin: 0; }
 
+.contadorMismaLata {
+  display: flex;
+  flex-direction: row; }
+
 /*----------SHOPPPING CART END------*/
 /*----------------PACK DE LATAS------*/
 #packDelComprador {
@@ -181,8 +185,14 @@ main {
   #packDelComprador p {
     font-size: 1rem;
     font-weight: bolder;
-    margin: 1rem 2rem 1rem 0;
+    margin: 1rem 0 1rem 0;
     color: white; }
+  #packDelComprador .contenedorMiniLata {
+    display: flex;
+    flex-direction: row; }
+    #packDelComprador .contenedorMiniLata .numMiniLatas {
+      margin-left: 0.5rem;
+      margin-right: 0.5rem; }
   #packDelComprador .cantidadMismaLata {
     width: 25%;
     border-style: none;
