@@ -17,7 +17,7 @@ var ipaYanky = new Cerveza("ipaYanky","IPA Yanky", "Lupuladas", "Lata", 200, 500
 var brutIpa = new Cerveza("brutIpa","Brut IPA", "Lupuladas", "Lata", 280, 50, "./images/laurus-brut-ipa.png");
 var hoppySaison = new Cerveza("hoppySaison","Hoppy Saison", "Lupuladas", "Botella", 250, 50, "./images/laurus-sasion.png");
 
-var stoutImperio = new Cerveza("stoutImperio","Stout Imperio Ruso", "Maltosas", "Lata", 280, 20, "./images/laurus-stout-imperio-ruso.png");
+var stoutImperio = new Cerveza("stoutImperio","Imperio Ruso", "Maltosas", "Lata", 280, 20, "./images/laurus-stout-imperio-ruso.png");
 var britishRed = new Cerveza("britishRed","British Red", "Maltosas", "Lata", 200, 20, "./images/laurus-british-red.png");
 
 
