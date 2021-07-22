@@ -97,12 +97,15 @@ const aniadir = (estilo) => {
     
 
 
-
-
-const abrirCarrito = () => {
+/* const abrirCarrito = () => {
     carrito.style.display = "block";
     packDelComprador.style.display = "block";
-}
+} */ //VIEJA FUNCION .ONCLICK
+
+$("#carritoLink").click(() => {
+    $("#packDelComprador").fadeIn(500);
+    $("#carrito").fadeIn(1000);
+})
 
 const pagar = () => {
     if (usuarioSessionStorage = null) {

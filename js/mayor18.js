@@ -4,12 +4,17 @@ var siBtn = document.getElementById("siBtn");
 var noBtn = document.getElementById("noBtn");
 
 
-const si18 = () => {
-
+/* const si18 = () => {
+    
     modal.style.display = "none";
 
 }
+ */
 
+$("#siBtn").click( () => {
+    $("#modalContent").fadeOut(300);
+    $("#modalBackground").fadeOut(1000);
+})
 
 const no18 = () => {
 
