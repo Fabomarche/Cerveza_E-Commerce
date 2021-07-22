@@ -38,6 +38,12 @@ const aniadir = (estilo) => {
     subtotal.innerHTML = subtotalANum;
     total.innerHTML = (subtotalANum * 1.21).toFixed(2);
 
+    $("#carritoLink").animate({"backgroundColor":"#d4188c"},100).animate({"backgroundColor":"#111111"},200)
+    .hover(()=>{$("#carritoLink").css("backgroundColor","#d4188c")},
+            ()=>{$("#carritoLink").css("backgroundColor","#111111")}
+    );
+   
+    
     let elemento = document.createElement('div');
     elemento.className = `contenedorMiniLata`;//clase al contenedor??
     elemento.innerHTML = `
@@ -107,12 +113,21 @@ $("#carritoLink").click(() => {
     $("#carrito").fadeIn(1000);
 })
 
-const pagar = () => {
+
+$("#pagarBtn").click(() => {
     if (usuarioSessionStorage = null) {
-        iniciarSesionBtn()
+        $("#iniciarSesion").slideDown(500)
     }
-    gracias.style.display = "block";
-}
+    $("#gracias").fadeIn(1000);
+})
+
+/* const pagar = () => {
+    if (usuarioSessionStorage = null) {
+        $("#iniciarSesion").slideDown(500)
+    }
+    )
+    gracias.style.display = "block"; */
+//VIEJA FUNCION .ONCLICK
 
 const sacarMensajeGracias = () => {
     gracias.style.display = "none";

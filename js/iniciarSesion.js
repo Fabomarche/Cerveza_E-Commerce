@@ -11,7 +11,7 @@ var direccion = document.getElementById("direction");
 } */
 
 
-$(".btn").click( () => {
+$("#btnLogIn").click( () => {
     $("#iniciarSesion").slideDown(500);
 })
 
