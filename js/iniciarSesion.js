@@ -16,18 +16,12 @@ $("#btnLogIn").click( () => {
 })
 
 
-const imprimirDatosEnCarrito= () => {
-    var usuarioSessionStorage = JSON.parse(sessionStorage.getItem("nuevoUsuario"));
-    nombreID.innerHTML = usuarioSessionStorage.nombre + " " + usuarioSessionStorage.apellido;
-    direccionID.innerHTML = usuarioSessionStorage.direccion;
-}
-
 
 $('#logInBtn').click(() => {
     let nombre = document.getElementById("nameform").value;
     let apellido = document.getElementById("lastname").value;
     let direccion = document.getElementById("direction").value;
-    var nuevoUsuario = new Usuario(nombre, apellido, direccion);
+    let nuevoUsuario = new Usuario(nombre, apellido, direccion);
     
     sessionStorage.setItem("nuevoUsuario", JSON.stringify(nuevoUsuario));
 
@@ -36,3 +30,9 @@ $('#logInBtn').click(() => {
     /* iniciarSesion.style.display = "none" */;}
     )
 
+    
+const imprimirDatosEnCarrito= () => {
+    let usuarioSessionStorage = JSON.parse(sessionStorage.getItem("nuevoUsuario"));
+    nombreID.innerHTML = usuarioSessionStorage.nombre + " " + usuarioSessionStorage.apellido;
+    direccionID.innerHTML = usuarioSessionStorage.direccion;
+}

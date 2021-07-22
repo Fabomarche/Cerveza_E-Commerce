@@ -28,6 +28,7 @@ header {
     height: 80px;
     background-color: #111;
     box-shadow: 0 1px 15px rgb(51, 59, 59);
+    z-index: 2;
 
     #carritoLink{
         display: flex;
@@ -77,6 +78,7 @@ header {
     margin: 2rem;
     border-radius: 75px;
     border: none;
+    
 }
 
 .btn:hover{
@@ -179,7 +181,7 @@ main{
             .card-btn:hover {
                 background-color: rgb(212, 24, 140);
 
-            } 
+            }
             
         }
     }
@@ -190,20 +192,19 @@ main{
 
 /*----------SHOPPPING CART------*/
 #container_pack{
-   /*  grid-area: carrito;
-    position: sticky;
-    top: 80px; */
+     grid-area: carrito;
+   position: sticky;
+    top: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index: -1;
     padding-top: 10px;
    
 }
 
 #carrito {
     display: none;
-    width: 50%;
+    width: 75%;
     text-align: center;
     margin-bottom: 3rem;
     padding: 1rem;
@@ -212,6 +213,7 @@ main{
     background-color:#111;
     box-shadow: 0px 10px 25px rgb(121, 121, 121);
     font-family: 'Montserrat', sans-serif;
+    
 
     p{
         font-size: 1rem;

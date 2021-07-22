@@ -114,8 +114,8 @@ $("#carritoLink").click(() => {
 })
 
 
-$("#pagarBtn").click(() => {
-    if (usuarioSessionStorage = null) {
+$("#pagarBtn").click( () => {
+    if (sessionStorage.getItem("nuevoUsuario") = null) {
         $("#iniciarSesion").slideDown(500)
     }
     $("#gracias").fadeIn(1000);
