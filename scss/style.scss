@@ -37,6 +37,7 @@ header {
         height: 80%;
         border-radius: 35px;
         padding: 0 0.5rem 0 0.5rem;
+        cursor: pointer;
         
 
         #numeroDeLatas{
@@ -78,6 +79,7 @@ header {
     margin: 2rem;
     border-radius: 75px;
     border: none;
+    cursor: pointer;
     
 }
 
@@ -249,6 +251,30 @@ main{
 .contadorMismaLata{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    .numMiniLatas{
+        font-size: 1.5rem;
+        }
+    .flechasContadorLatas{
+        background-color: #111;
+        border-style: none;
+        font-size: 1rem;
+        font-weight: bolder;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .paddingLeft{
+        padding-left: 0.4rem;
+    }
+    .paddingRight{
+        padding-right: 0.4rem;
+    }
+
+    .flechasContadorLatas:hover{
+        color: rgb(212, 24, 140);
+    }
 }
 /*----------SHOPPPING CART END------*/
 
@@ -274,7 +300,6 @@ main{
     }
 
     p{
-        font-size: 1rem;
         font-weight: bolder;
         margin: 1rem 0 1rem 0;
         color: white;

@@ -15,7 +15,7 @@ var pedido =[];//Carrito de pédido
 const listaDeLatas = document.getElementById("listaDeLatas")
 
 /*----------ARRAYS DE LATAS POR ESTILO PARA CONTADOR-----*/
-var pack_microIpa = [];
+/* var pack_microIpa = [];
 var pack_ipaYanky = [];
 var pack_brutIpa = [];
 var pack_hoppySaison = [];
@@ -24,28 +24,44 @@ var pack_britishRed = [];
 var pack_mandagose = [];
 var pack_pinky = [];
 var pack_rice = [];
-var pack_pilsen = [];
+var pack_pilsen = []; */
 
 
 /*----------FIN ARRAYS DE LATAS POR ESTILO PARA CONTADOR-----*/
 
 const aniadir = (estilo) => {
+    let index = pedido.findIndex(birra => birra.id == estilo.id);
+        
+    if(index != -1) {
+            pedido[index].unidadesPedidas += 1;
+            subtotalANum += pedido[index].precio;
+            subtotal.innerHTML = subtotalANum;
+            total.innerHTML = (subtotalANum * 1.21).toFixed(2);
+        }else{
+            pedido.unshift(estilo);
+            subtotalANum += pedido[0].precio;
+            subtotal.innerHTML = subtotalANum;
+            total.innerHTML = (subtotalANum * 1.21).toFixed(2);
+        };
+
+    creadorLatasEnCarrito();    
+
     cantidadDeLatas += 1
     numeroDeLatas.innerText = cantidadDeLatas.toString();
     mnjCantidadLatas.innerText = cantidadDeLatas.toString();
-    pedido.unshift(estilo);
-    subtotalANum += pedido[0].precio;
+    
+    /* subtotalANum += pedido[0].precio;
     subtotal.innerHTML = subtotalANum;
-    total.innerHTML = (subtotalANum * 1.21).toFixed(2);
+    total.innerHTML = (subtotalANum * 1.21).toFixed(2); */
 
     $("#carritoLink").animate({"backgroundColor":"#d4188c"},100).animate({"backgroundColor":"#111111"},200)
     .hover(()=>{$("#carritoLink").css("backgroundColor","#d4188c")},
             ()=>{$("#carritoLink").css("backgroundColor","#111111")}
-    );
+    );//animacion boton carrito en header
    
     
-    let elemento = document.createElement('div');
-    elemento.className = `contenedorMiniLata`;//clase al contenedor??
+    /* let elemento = document.createElement('div');
+    elemento.className = `contenedorMiniLata`;
     elemento.innerHTML = `
         <div class="elementoLata">
             
@@ -62,9 +78,9 @@ const aniadir = (estilo) => {
             <p id="num-${estilo.id}" class="numMiniLatas">0</p>
             <p id="sumar-${estilo.id}">></p>
         </div>
-    `;
+    `; */
     
-    switch (estilo) {
+    /* switch (estilo) {
         case microIpa:
             pack_microIpa.push(estilo)
             break;
@@ -95,9 +111,9 @@ const aniadir = (estilo) => {
         case pilsen:
             pack_pilsen.push(estilo)
             break;                            
-    }
+    } */
     
-    listaDeLatas.appendChild(elemento);
+    /* listaDeLatas.appendChild(elemento); */
 
 }   
     

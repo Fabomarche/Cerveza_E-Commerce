@@ -1,6 +1,6 @@
 //Constructor de Cervezas
 class Cerveza{
-    constructor(id, nombre, estilo, envase, precio, stock, rutaImagen){
+    constructor(id, nombre, estilo, envase, precio, stock, rutaImagen, unidadesPedidas){
         this.id = id;
         this.nombre = nombre;
         this.estilo = estilo;
@@ -8,6 +8,7 @@ class Cerveza{
         this.precio = precio;
         this.stock = stock;
         this.rutaImagen = rutaImagen;
+        this.unidadesPedidas = 1;
     };
 };
 
