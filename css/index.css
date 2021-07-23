@@ -6,8 +6,8 @@
 body {
   display: grid;
   grid-template-columns: 6fr 4fr;
-  grid-template-rows: auto auto auto;
-  grid-template-areas: "h h" "m m" "f f"; }
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas: "h h" "m m" "j j" "f f"; }
 
 /*----------HEADER-------*/
 header {
@@ -240,6 +240,33 @@ main {
       width: 100%; }
 
 /*------------PACK DE LATAS END------*/
+/*------------FAMOSOS-------------*/
+#conteinerFamosos {
+  grid-area: j;
+  display: flex;
+  flex-direction: column;
+  background-color: #222;
+  color: beige;
+  width: 45%;
+  height: auto;
+  margin: 0 0 1rem 0;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  box-shadow: -3px 6px 15px #333b3b;
+  border-radius: 12px;
+  justify-self: center; }
+  #conteinerFamosos h3 {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    background-color: #d4188c;
+    width: 100%;
+    color: beige;
+    box-shadow: 0 1px 15px #333b3b;
+    margin-bottom: 1rem; }
+  #conteinerFamosos p {
+    margin-bottom: 0.2rem; }
+
+/*------------FIN FAMOSOS-------------*/
 /*----------FOOTER------*/
 footer {
   grid-area: f;

@@ -8,10 +8,11 @@
 body {
     display:grid;
     grid-template-columns: 6fr 4fr;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto auto auto;
     grid-template-areas: 
                         "h h"
                         "m m"
+                        "j j"
                         "f f";
 }
 
@@ -342,6 +343,42 @@ main{
 
 /*------------PACK DE LATAS END------*/
 
+/*------------FAMOSOS-------------*/
+#conteinerFamosos{
+        grid-area: j;
+        display: flex;
+        flex-direction: column;
+        background-color: #222;
+        color: beige;
+        width: 45%;
+        height: auto;
+        margin: 0 0 1rem 0;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        box-shadow: -3px 6px 15px rgb(51, 59, 59);
+        border-radius: 12px;     
+        justify-self: center;
+
+        h3{
+            font-size: 1.5rem;
+            font-weight: bolder;
+            background-color: rgb(212, 24, 140);
+            width: 100%;
+            color: beige;
+            box-shadow: 0 1px 15px rgb(51, 59, 59);
+            margin-bottom: 1rem;
+        }
+        
+        p{
+            margin-bottom: 0.2rem;
+        }
+
+}
+
+
+
+
+/*------------FIN FAMOSOS-------------*/
 
 /*----------FOOTER------*/
 footer {
