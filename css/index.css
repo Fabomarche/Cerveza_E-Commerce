@@ -4,6 +4,8 @@
   padding: 0; }
 
 body {
+  background-color: #f0f5ff;
+  font-family: 'Montserrat', sans-serif;
   display: grid;
   grid-template-columns: 6fr 4fr;
   grid-template-rows: auto auto auto auto;
@@ -34,7 +36,6 @@ header {
       display: block;
       color: #F5F5DC;
       font-size: 3rem;
-      font-family: 'Montserrat', sans-serif;
       font-weight: 500;
       margin-right: 1rem; }
   header #carritoLink:hover {
@@ -45,8 +46,9 @@ header {
   height: 100%;
   margin-right: 25px; }
 
-.btn, main .cards-group .card .card-btn, .btn-logIn {
+.btn, .cards-group .card .card-btn, #modalBackground #modalContent .modalBtns, .btn-logIn {
   font-family: 'Montserrat', sans-serif;
+  width: fit-content;
   color: beige;
   font-size: 1.3rem;
   font-weight: 900;
@@ -59,7 +61,7 @@ header {
   border: none;
   cursor: pointer; }
 
-.btn:hover, main .cards-group .card .card-btn:hover, .btn-logIn:hover {
+.btn:hover, .cards-group .card .card-btn:hover, #modalBackground #modalContent .modalBtns:hover, .btn-logIn:hover {
   background-color: #d4188c; }
 
 /*----------HEADER END-------*/
@@ -69,9 +71,9 @@ main {
   display: grid;
   grid-template-areas: "logo logo" "latas carrito";
   flex-direction: column;
-  align-items: flex-start;
-  /*----------CARDS-------*/ }
+  align-items: flex-start; }
   main .logoLaurus {
+    background-color: white;
     grid-area: logo;
     display: flex;
     justify-content: center;
@@ -80,59 +82,61 @@ main {
     padding-top: 1rem;
     padding-bottom: 1rem;
     box-shadow: 0 1px 15px #333b3b; }
-    main .logoLaurus img {
-      width: 30%; }
-  main .cards-group {
-    grid-area: latas;
+    main .logoLaurus #logoHeader {
+      width: 30%;
+      height: auto; }
+
+/*----------CARDS-------*/
+.cards-group {
+  grid-area: latas;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-self: flex-start;
+  margin-bottom: 5rem; }
+  .cards-group .card {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-self: flex-start;
-    margin-bottom: 5rem; }
-    main .cards-group .card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: #EEE;
-      border: 1px solid #222;
-      width: 25%;
-      height: auto;
-      overflow: hidden;
-      margin: 1rem;
-      font-family: 'Montserrat', sans-serif;
+    flex-direction: column;
+    align-items: center;
+    background-color: #EEE;
+    border: 1px solid #222;
+    width: 25%;
+    height: auto;
+    overflow: hidden;
+    margin: 1rem;
+    text-align: center;
+    box-shadow: -3px 6px 15px #333b3b;
+    border-radius: 12px; }
+    .cards-group .card img {
+      max-width: 100%;
+      height: auto; }
+    .cards-group .card .card-title {
+      font-size: 1.5rem;
+      font-weight: bolder;
+      background-color: #d4188c;
+      width: 100%;
+      color: beige;
+      box-shadow: 0 1px 15px #333b3b; }
+    .cards-group .card .card-list {
+      list-style: none;
+      font-size: 1.2rem;
+      background-color: #222;
+      width: 100%;
+      color: beige; }
+    .cards-group .card .price {
+      font-weight: bolder; }
+    .cards-group .card .card-btn {
       text-align: center;
-      box-shadow: -3px 6px 15px #333b3b;
-      border-radius: 12px; }
-      main .cards-group .card img {
-        max-width: 100%;
-        height: auto; }
-      main .cards-group .card .card-title {
-        font-size: 1.5rem;
-        font-weight: bolder;
-        background-color: #d4188c;
-        width: 100%;
-        color: beige;
-        box-shadow: 0 1px 15px #333b3b; }
-      main .cards-group .card .card-list {
-        list-style: none;
-        font-size: 1.2rem;
-        background-color: #222;
-        width: 100%;
-        color: beige; }
-      main .cards-group .card .price {
-        font-weight: bolder; }
-      main .cards-group .card .card-btn {
-        text-align: center;
-        width: 80%;
-        height: auto;
-        padding: 0.5rem;
-        margin: 0 0 0.5rem 0;
-        border-radius: 0px;
-        width: 100%;
-        margin-bottom: 0; }
-      main .cards-group .card .card-btn:hover {
-        background-color: #d4188c; }
+      width: 80%;
+      height: auto;
+      padding: 0.5rem;
+      margin: 0 0 0.5rem 0;
+      border-radius: 0px;
+      width: 100%;
+      margin-bottom: 0; }
+    .cards-group .card .card-btn:hover {
+      background-color: #d4188c; }
 
 /*----------CARDS END-------*/
 /*----------SHOPPPING CART------*/
@@ -154,8 +158,7 @@ main {
   border: 1px solid #111;
   border-radius: 12px;
   background-color: #111;
-  box-shadow: 0px 10px 25px #797979;
-  font-family: 'Montserrat', sans-serif; }
+  box-shadow: 0px 10px 25px #797979; }
   #carrito p {
     font-size: 1rem;
     margin-bottom: 1rem;
@@ -208,8 +211,7 @@ main {
   border: 1px solid #111;
   border-radius: 12px;
   background-color: #111;
-  box-shadow: 0px 10px 25px #797979;
-  font-family: 'Montserrat', sans-serif; }
+  box-shadow: 0px 10px 25px #797979; }
   #packDelComprador h2 {
     font-size: 2rem;
     background-color: #d4188c;
@@ -236,7 +238,7 @@ main {
   #packDelComprador .imagenLataChica {
     width: 10%;
     height: auto; }
-    #packDelComprador .imagenLataChica img {
+    #packDelComprador .imagenLataChica .miniImagenLatas {
       width: 100%; }
 
 /*------------PACK DE LATAS END------*/
@@ -250,7 +252,6 @@ main {
   width: 45%;
   height: auto;
   margin: 0 0 1rem 0;
-  font-family: 'Montserrat', sans-serif;
   text-align: center;
   box-shadow: -3px 6px 15px #333b3b;
   border-radius: 12px;
@@ -276,7 +277,6 @@ footer {
   height: 80px;
   background-color: #111; }
   footer p {
-    font-family: 'Montserrat', sans-serif;
     color: beige;
     font-size: 1.3rem;
     margin-left: 1rem; }
@@ -299,13 +299,13 @@ footer {
 /*---------MODAL BOX-----------*/
 #modalBackground {
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4); }
+  background-color: rgba(0, 0, 0, 0.8); }
   #modalBackground #modalContent {
     display: flex;
     flex-direction: column;
@@ -313,25 +313,28 @@ footer {
     text-align: center;
     background-color: white;
     margin: 7.5% auto;
+    padding-bottom: 1rem;
     width: 60%;
-    height: 60%;
+    height: auto;
     border-radius: 25px;
     box-shadow: 0px 25px 75px #3a3a3a; }
+    #modalBackground #modalContent #modalLogoLaurus {
+      width: 100%;
+      height: auto; }
+      #modalBackground #modalContent #modalLogoLaurus img {
+        max-width: 50%;
+        width: 100%; }
     #modalBackground #modalContent #textModal {
-      font-family: 'Montserrat', sans-serif;
       color: #222;
       font-size: 2.5rem;
       font-weight: bolder;
       margin: 2% 10% 2% 10%; }
     #modalBackground #modalContent .modalBtns {
-      font-family: 'Montserrat', sans-serif;
-      color: #222;
-      background-color: white;
       font-size: 2.5rem;
       font-weight: bolder;
       padding: 0 2% 0 2%;
       width: 25%;
-      margin-top: 2%;
+      margin: 2% 1% 0 1%;
       border-radius: 12px;
       box-shadow: 0px 1px 15px #dadada; }
     #modalBackground #modalContent .modalBtns:hover, #modalBackground #modalContent .modalBtns:focus {
@@ -339,11 +342,11 @@ footer {
       background-color: #d4188c; }
 
 /*---------MODAL BOX END-----------*/
-/*----------INICIO DE SESION END--------*/
+/*----------INICIO DE SESION--------*/
 #iniciarSesion {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   left: 0;
   top: 0;
   width: 100%;
@@ -362,7 +365,6 @@ footer {
     height: auto;
     border-radius: 25px;
     box-shadow: 0px 25px 75px #3a3a3a;
-    font-family: 'Montserrat', sans-serif;
     color: #222;
     font-size: 2.5rem;
     font-weight: bolder; }
@@ -380,34 +382,85 @@ footer {
 .btn-logIn:hover {
   background-color: #d4188c; }
 
-/*----THANKS FINAL MESSAGE----*/
-#gracias {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4); }
-  #gracias p {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    color: #222;
-    font-size: 2.5rem;
-    font-weight: bolder;
-    background-color: white;
-    margin: 7.5% auto;
-    width: 60%;
-    height: 40%;
-    border-radius: 25px;
-    box-shadow: 0px 25px 75px #3a3a3a; }
-  #gracias p:hover {
-    background-color: #222;
-    color: #d4188c; }
+/*----------INICIO DE SESION END--------*/
+/*--------SWEET ALERT -----------*/
+.popupSwal {
+  color: #222;
+  border-radius: 45px; }
 
-/*----THANKS FINAL MESSAGE END----*/
+/*--------SWEET ALERT END-----------*/
+/*--------------------------MEDIAS QUERY -----------------------------------*/
+/*------------------CELLPHONE------------------*/
+@media only screen and (min-width: 360px) and (max-width: 576px) {
+  /*--------MAIN-----------*/
+  main {
+    grid-template-columns: 12fr;
+    grid-template-areas: "logo" "carrito" "latas"; }
+  /*--------MAIN END-----------*/
+  /*----------SHOPPPING CART------*/
+  #container_pack {
+    position: inherit; }
+  /*----------SHOPPPING CART END------*/
+  /*----------CARDS-------*/
+  .cards-group .card {
+    width: 50%; }
+  /*----------CARDS END-------*/
+  /*----------FOOTER------*/
+  footer {
+    grid-area: f;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    background-color: #111; }
+    footer p {
+      font-size: 0.7rem;
+      margin: 0 0 1% 0; }
+    footer .redes {
+      margin: 2% 0 1% 0; }
+      footer .redes .footer-icon {
+        width: 1.2rem; }
+  /*----------FOOTER END------*/
+  /*------------MODAL----------*/
+  #modalBackground #modalContent {
+    margin: 50% auto;
+    width: 90%; }
+    #modalBackground #modalContent #modalLogoLaurus {
+      margin-top: 1rem; }
+    #modalBackground #modalContent #textModal {
+      font-size: 1.2rem;
+      margin: 5%; }
+    #modalBackground #modalContent .modalBtns {
+      font-size: 1.5rem;
+      padding: 2%;
+      width: 35%;
+      margin: 2% 1% 2% 1%; }
+  /*------------MODAL END----------*/
+  /*----------INICIO DE SESION--------*/
+  #iniciarSesion #sesionContent {
+    margin: 25% auto;
+    width: 75%;
+    font-size: 1.2rem; }
+    #iniciarSesion #sesionContent input {
+      font-size: 1.5rem;
+      width: 90%;
+      margin-bottom: 1rem; }
+  .btn-logIn {
+    font-size: 1.2rem;
+    width: 75%;
+    border-radius: 25px;
+    padding: 0.5rem;
+    margin: 0.5rem; }
+  /*----------INICIO DE SESION END--------*/ }
+
+/*------------------CELLPHONE END------------------*/
+/*-------------------TABLETS-------------------------*/
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+  /*----------CARDS-------*/
+  .cards-group .card {
+    width: 35%; }
+  /*----------CARDS END-------*/ }
+
+/*-------------------TABLETS ENDS-------------------------*/
+/*--------------------------MEDIAS QUERY END-------------------------------*/

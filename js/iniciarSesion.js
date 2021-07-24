@@ -12,7 +12,7 @@ var direccion = document.getElementById("direction");
 
 
 $("#btnLogIn").click( () => {
-    $("#iniciarSesion").slideDown(500);
+    $("#iniciarSesion").fadeIn(500);
 })
 
 
@@ -26,9 +26,49 @@ $('#logInBtn').click(() => {
     sessionStorage.setItem("nuevoUsuario", JSON.stringify(nuevoUsuario));
 
     imprimirDatosEnCarrito();
-    $("#iniciarSesion").slideUp(500, ()=>{alert("Ud se Logueó")});
-    /* iniciarSesion.style.display = "none" */;}
-    )
+    $("#iniciarSesion").fadeOut(500, ()=>{Swal.fire({
+        background: "white",
+        title: "¡Bienvenido!",
+        text: "Ud. ya esta logueado...",
+        icon: "success",
+        width: "50%",
+        allowOutsideClick: true,
+        allowEscapeKey: true,
+        allowEnterKey: true,
+        confirmButtonText: "Pagar",
+        buttonsStyling: false,
+        showCancelButton: true,
+        cancelButtonText: "Continuar",
+        customClass: {
+            popup: "popupSwal",
+            confirmButton: 'btn',
+            cancelButton: 'btn',   
+        }
+        
+    }).then((resultado) => {
+        if (resultado.isConfirmed) {
+            Swal.fire({
+                background: "white",
+                title: "¡Compra Confirmada!",
+                text: "A brindar...",
+                icon: "success",
+                width: "50%",
+                allowOutsideClick: true,
+                allowEscapeKey: true,
+                allowEnterKey: true,
+                confirmButtonText: "Salud!",
+                buttonsStyling: false,
+                customClass: {
+                    popup: "popupSwal",
+                    confirmButton: 'btn',
+                    
+                }
+            });
+          } 
+    });
+    });
+    }
+    );
 
     
 const imprimirDatosEnCarrito= () => {
