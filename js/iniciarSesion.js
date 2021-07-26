@@ -31,10 +31,10 @@ $('#logInBtn').click(() => {
         title: "¡Bienvenido!",
         text: "Ud. ya esta logueado...",
         icon: "success",
-        width: "50%",
         allowOutsideClick: true,
         allowEscapeKey: true,
         allowEnterKey: true,
+        backdrop: true,
         confirmButtonText: "Pagar",
         buttonsStyling: false,
         showCancelButton: true,
@@ -52,16 +52,15 @@ $('#logInBtn').click(() => {
                 title: "¡Compra Confirmada!",
                 text: "A brindar...",
                 icon: "success",
-                width: "50%",
                 allowOutsideClick: true,
                 allowEscapeKey: true,
                 allowEnterKey: true,
+                backdrop: true,
                 confirmButtonText: "Salud!",
                 buttonsStyling: false,
                 customClass: {
-                    popup: "popupSwal",
-                    confirmButton: 'btn',
-                    
+                    popup: 'popupSwal',
+                    confirmButton: 'btn', 
                 }
             });
           } 

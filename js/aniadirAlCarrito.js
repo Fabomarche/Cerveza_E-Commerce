@@ -44,21 +44,17 @@ const aniadir = (estilo) => {
 }   
     
 
-
+/*-------BOTON CARRITO HEADER---*/
 $("#carritoLink").click(() => {
     $("#packDelComprador").fadeIn(500);
     $("#carrito").fadeIn(1000);
 })
+/*------CERRRAR container_pack ----------*/
+$("#cerrarPack").click(() => {
+    $("#packDelComprador").fadeOut(500);
+    $("#carrito").fadeOut(500);
+})
 
-/* var containerPack = document.getElementById("container_pack");
-
-if(containerPack.style.display != "none"){
-    $("#carritoLink").click(() => {
-        $("#packDelComprador").fadeOuy(500);
-    $("#carrito").fadeOut(1000);
-    })
-}
- */ //ACTO FALLIDO DE REVERTIR EL BOTON CARRITO
 
 $("#pagarBtn").click( () => {
     if (sessionStorage.getItem("nuevoUsuario") == null) {
@@ -69,14 +65,14 @@ $("#pagarBtn").click( () => {
             title: "¡Compra Confirmada!",
             text: "A brindar...",
             icon: "success",
-            width: "50%",
             allowOutsideClick: true,
             allowEscapeKey: true,
             allowEnterKey: true,
+            backdrop: true,
             confirmButtonText: "Salud!",
             buttonsStyling: false,
             customClass: {
-                popup: "popupSwal",
+                popup: 'popupSwal',
                 confirmButton: 'btn',
                 
             }
@@ -91,4 +87,5 @@ const sacarMensajeGracias = () => {
     gracias.style.display = "none";
     
 }
+
 

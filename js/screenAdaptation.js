@@ -5,11 +5,9 @@ if (screen.width <= 576){
     })
 }
 
-if (screen.width <= 768 || screen.width > 576){
+if (screen.width <= 768 && screen.width > 576){
     $("#carritoLink").click(() => {
         $(".card").css("width","50%")
     })
-    
-    
 }
 
