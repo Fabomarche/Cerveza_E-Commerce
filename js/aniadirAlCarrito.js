@@ -28,10 +28,32 @@ const aniadir = (estilo) => {
             subtotalANum += pedido[0].precio;
             subtotal.innerHTML = subtotalANum;
             total.innerHTML = (subtotalANum * 1.21).toFixed(2);
+; 
         };
-
-    creadorLatasEnCarrito();    
-
+    
+    creadorLatasEnCarrito();
+    if(estilo.stock !== 0){
+    estilo.stock -= 1;
+    CardsCreator(); 
+    }else{
+        Swal.fire({
+            background: "white",
+            title: "No hay Stock",
+            text: "Disculpe las molestias",
+            icon: "error",
+            allowOutsideClick: true,
+            allowEscapeKey: true,
+            allowEnterKey: true,
+            backdrop: true,
+            confirmButtonText: "Continuar",
+            buttonsStyling: false,
+            customClass: {
+                popup: 'popupSwal',
+                confirmButton: 'btn',
+                
+            }
+        });
+    }
     cantidadDeLatas += 1
     numeroDeLatas.innerText = cantidadDeLatas.toString();
     mnjCantidadLatas.innerText = cantidadDeLatas.toString();
@@ -73,13 +95,18 @@ $("#pagarBtn").click( () => {
             buttonsStyling: false,
             customClass: {
                 popup: 'popupSwal',
-                confirmButton: 'btn',
-                
+                confirmButton: 'btn',               
             }
         });
     }
-    
-    
+    pedido.splice(0, pedido.length);
+    creadorLatasEnCarrito();
+    cantidadDeLatas = 0;
+    numeroDeLatas.innerText = cantidadDeLatas.toString();
+    mnjCantidadLatas.innerText = cantidadDeLatas.toString();
+    subtotalANum = 0;
+    subtotal.innerHTML = subtotalANum;
+    total.innerHTML = subtotalANum;
 })
 
 

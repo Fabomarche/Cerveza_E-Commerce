@@ -3,7 +3,7 @@ const CardsCreator = () => {
 
     for(i=0; i<todasCervezasArray.length; i++){
         todasCervezasArray[i].forEach(cerveza => showCards += 
-        `<div class="card">
+        `<div class="card" id="card-${cerveza.id}">
             <div class="card-image">
                 <img src="${cerveza.rutaImagen}" alt="lata de cerveza ${cerveza.nombre}">
             </div>
