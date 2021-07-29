@@ -3,6 +3,9 @@
   margin: 0;
   padding: 0; }
 
+html {
+  scroll-behavior: smooth; }
+
 body {
   background-color: #f0f5ff;
   background-image: url("https://www.transparenttextures.com/patterns/noise-pattern-with-subtle-cross-lines.png");
@@ -19,12 +22,15 @@ header {
   top: 0px;
   left: 0px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height: 80px;
   background-color: #222;
   box-shadow: 0 1px 15px #333b3b;
   z-index: 2; }
+  header .logoLaurusHeader {
+    width: 10%;
+    height: auto; }
   header #carritoLink {
     display: flex;
     background-color: #222;
@@ -156,6 +162,9 @@ main {
   align-items: center;
   padding-top: 10px; }
 
+.gridTemplateColumn {
+  grid-template-columns: 7fr 3fr; }
+
 #carrito {
   display: none;
   width: 75%;
@@ -171,7 +180,7 @@ main {
     margin-bottom: 0.5rem;
     color: beige; }
   #carrito h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     background-color: #d4188c;
     border-radius: 18px;
     color: beige; }
@@ -213,7 +222,7 @@ main {
 /*----------------PACK DE LATAS------*/
 #packDelComprador {
   display: none;
-  width: 50%;
+  width: 75%;
   text-align: center;
   margin-bottom: 1rem;
   padding: 1rem;
@@ -222,7 +231,7 @@ main {
   background-color: #222;
   box-shadow: 0px 10px 25px #797979; }
   #packDelComprador h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     background-color: #d4188c;
     border-radius: 18px;
     color: beige; }
@@ -380,7 +389,9 @@ footer {
   border-radius: 45px; }
 
 /*--------SWEET ALERT END-----------*/
-/*--------------------------MEDIAS QUERY -----------------------------------*/
+/*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+/*------------------------@ MEDIAS QUERY @-----------------------------------*/
+/*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
 /*------------------CELLPHONE------------------*/
 @media only screen and (min-width: 360px) and (max-width: 576px) {
   header {
@@ -401,7 +412,7 @@ footer {
       margin-right: 0.5rem; }
   /*--------MAIN-----------*/
   main {
-    grid-template-columns: 12fr;
+    grid-template-columns: 12fr !important;
     grid-template-areas: "logo" "carrito" "latas"; }
   /*--------MAIN END-----------*/
   /*----------SHOPPPING CART------*/
@@ -502,7 +513,8 @@ footer {
     #packDelComprador h2 {
       font-size: 1rem; }
     #packDelComprador p {
-      margin: 0.2rem 0 0.2rem 0; } }
+      margin: 0.2rem 0 0.2rem 0;
+      font-size: 1rem; } }
 
 /*-------------------TABLETS ENDS-------------------------*/
 /*--------------------------MEDIAS QUERY END-------------------------------*/

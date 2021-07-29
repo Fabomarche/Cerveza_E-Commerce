@@ -22,17 +22,26 @@ const aniadir = (estilo) => {
             pedido[index].unidadesPedidas += 1;
             subtotalANum += pedido[index].precio;
             subtotal.innerHTML = subtotalANum;
-            total.innerHTML = (subtotalANum * 1.21).toFixed(2);
+            total.innerHTML = (subtotalANum * 1.21).toFixed(2)
         }else{
             pedido.unshift(estilo);
             subtotalANum += pedido[0].precio;
             subtotal.innerHTML = subtotalANum;
-            total.innerHTML = (subtotalANum * 1.21).toFixed(2);
-; 
+            total.innerHTML = (subtotalANum * 1.21).toFixed(2)
         };
     
     creadorLatasEnCarrito();
     if(estilo.stock !== 0){
+    cantidadDeLatas += 1
+    numeroDeLatas.innerText = cantidadDeLatas.toString();
+    mnjCantidadLatas.innerText = cantidadDeLatas.toString();
+
+
+    $("#carritoLink").animate({"backgroundColor":"#d4188c"},100).animate({"backgroundColor":"#222222"},200)
+    .hover(()=>{$("#carritoLink").css("backgroundColor","#d4188c")},
+    ()=>{$("#carritoLink").css("backgroundColor","#222222")}
+    );//animacion boton carrito en header
+    
     estilo.stock -= 1;
     CardsCreator(); 
     }else{
@@ -54,15 +63,6 @@ const aniadir = (estilo) => {
             }
         });
     }
-    cantidadDeLatas += 1
-    numeroDeLatas.innerText = cantidadDeLatas.toString();
-    mnjCantidadLatas.innerText = cantidadDeLatas.toString();
-    
-        $("#carritoLink").animate({"backgroundColor":"#d4188c"},100).animate({"backgroundColor":"#222222"},200)
-    .hover(()=>{$("#carritoLink").css("backgroundColor","#d4188c")},
-            ()=>{$("#carritoLink").css("backgroundColor","#222222")}
-    );//animacion boton carrito en header
-
 }   
     
 
@@ -70,13 +70,14 @@ const aniadir = (estilo) => {
 $("#carritoLink").click(() => {
     $("#packDelComprador").fadeIn(500);
     $("#carrito").fadeIn(1000);
+    $("main").addClass("gridTemplateColumn");
 })
 /*------CERRRAR container_pack ----------*/
 $("#cerrarPack").click(() => {
-    $("#packDelComprador").fadeOut(500);
-    $("#carrito").fadeOut(500);
-})
-
+    $("#packDelComprador").hide(200);
+    $("#carrito").hide(200);
+    $("main").delay(1000).removeClass("gridTemplateColumn");
+});
 
 const resetCarrito = () => {
     pedido.splice(0, pedido.length);
@@ -111,8 +112,7 @@ $("#pagarBtn").click( () => {
         });
         resetCarrito();
     }
-  
-})
+});
 
 
 const sacarMensajeGracias = () => {
