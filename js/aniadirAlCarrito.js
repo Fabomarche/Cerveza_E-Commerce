@@ -58,9 +58,9 @@ const aniadir = (estilo) => {
     numeroDeLatas.innerText = cantidadDeLatas.toString();
     mnjCantidadLatas.innerText = cantidadDeLatas.toString();
     
-        $("#carritoLink").animate({"backgroundColor":"#d4188c"},100).animate({"backgroundColor":"#111111"},200)
+        $("#carritoLink").animate({"backgroundColor":"#d4188c"},100).animate({"backgroundColor":"#222222"},200)
     .hover(()=>{$("#carritoLink").css("backgroundColor","#d4188c")},
-            ()=>{$("#carritoLink").css("backgroundColor","#111111")}
+            ()=>{$("#carritoLink").css("backgroundColor","#222222")}
     );//animacion boton carrito en header
 
 }   
@@ -77,6 +77,17 @@ $("#cerrarPack").click(() => {
     $("#carrito").fadeOut(500);
 })
 
+
+const resetCarrito = () => {
+    pedido.splice(0, pedido.length);
+    creadorLatasEnCarrito();
+    cantidadDeLatas = 0;
+    numeroDeLatas.innerText = cantidadDeLatas.toString();
+    mnjCantidadLatas.innerText = cantidadDeLatas.toString();
+    subtotalANum = 0;
+    subtotal.innerHTML = subtotalANum;
+    total.innerHTML = subtotalANum;
+} 
 
 $("#pagarBtn").click( () => {
     if (sessionStorage.getItem("nuevoUsuario") == null) {
@@ -98,15 +109,9 @@ $("#pagarBtn").click( () => {
                 confirmButton: 'btn',               
             }
         });
+        resetCarrito();
     }
-    pedido.splice(0, pedido.length);
-    creadorLatasEnCarrito();
-    cantidadDeLatas = 0;
-    numeroDeLatas.innerText = cantidadDeLatas.toString();
-    mnjCantidadLatas.innerText = cantidadDeLatas.toString();
-    subtotalANum = 0;
-    subtotal.innerHTML = subtotalANum;
-    total.innerHTML = subtotalANum;
+  
 })
 
 

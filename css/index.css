@@ -10,7 +10,7 @@ body {
   display: grid;
   grid-template-columns: 6fr 4fr;
   grid-template-rows: auto auto auto auto;
-  grid-template-areas: "h h" "m m" "j j" "f f"; }
+  grid-template-areas: "h h" "m m" "f f"; }
 
 /*----------HEADER-------*/
 header {
@@ -23,11 +23,11 @@ header {
   align-items: center;
   height: 80px;
   background-color: #222;
-  background-image: url("https://www.transparenttextures.com/patterns/black-orchid.png");
   box-shadow: 0 1px 15px #333b3b;
   z-index: 2; }
   header #carritoLink {
     display: flex;
+    background-color: #222;
     justify-content: center;
     align-items: center;
     height: 80%;
@@ -39,13 +39,15 @@ header {
       color: #F5F5DC;
       font-size: 3rem;
       font-weight: 500;
-      padding-right: 0.5rem; }
+      padding-right: 0.5rem;
+      transition: 0.5s; }
   header #carritoLink:hover {
+    transition: 0.5s;
     background-color: #d4188c; }
 
 .shopping-cart {
   width: 3rem;
-  height: 100%;
+  height: auto;
   margin-right: 25px; }
 
 .btn, .cards-group .card .card-btn, #modalBackground #modalContent .modalBtns, .btn-logIn {
@@ -61,9 +63,11 @@ header {
   margin: 2rem;
   border-radius: 75px;
   border: none;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: 0.5s; }
 
 .btn:hover, .cards-group .card .card-btn:hover, #modalBackground #modalContent .modalBtns:hover, .btn-logIn:hover {
+  transition: 0.5s;
   background-color: #d4188c; }
 
 /*----------HEADER END-------*/
@@ -85,14 +89,13 @@ main {
     padding-bottom: 1rem;
     box-shadow: 0 1px 15px #333b3b; }
     main .logoLaurus #logoHeader {
-      width: 30%;
+      width: 20%;
       height: auto; }
 
 /*----------CARDS-------*/
 .cards-group {
   grid-area: latas;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-self: flex-start;
@@ -104,12 +107,14 @@ main {
     background-color: #EEE;
     border: 1px solid #222;
     width: 25%;
-    height: auto;
+    height: 100%;
     overflow: hidden;
     margin: 1rem;
     text-align: center;
     box-shadow: -3px 6px 15px #333b3b;
     border-radius: 12px; }
+    .cards-group .card .card-image {
+      width: 65%; }
     .cards-group .card img {
       max-width: 100%;
       height: auto; }
@@ -155,12 +160,11 @@ main {
   display: none;
   width: 75%;
   text-align: center;
-  margin-bottom: 3rem;
+  margin: 0 1rem 3rem 1rem;
   padding: 1rem;
   border: 1px solid #222;
   border-radius: 12px;
-  background-color: #111;
-  background-image: url("https://www.transparenttextures.com/patterns/black-orchid.png");
+  background-color: #222;
   box-shadow: 0px 10px 25px #797979; }
   #carrito p {
     font-size: 1rem;
@@ -216,7 +220,6 @@ main {
   border: 1px solid #111;
   border-radius: 12px;
   background-color: #222;
-  background-image: url("https://www.transparenttextures.com/patterns/black-orchid.png");
   box-shadow: 0px 10px 25px #797979; }
   #packDelComprador h2 {
     font-size: 2rem;
@@ -255,33 +258,6 @@ main {
   font-weight: bolder; }
 
 /*------------PACK DE LATAS END------*/
-/*------------FAMOSOS-------------*/
-#conteinerFamosos {
-  grid-area: j;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #222;
-  color: beige;
-  width: 45%;
-  height: auto;
-  margin: 0 0 1rem 0;
-  text-align: center;
-  box-shadow: -3px 6px 15px #333b3b;
-  border-radius: 12px;
-  justify-self: center; }
-  #conteinerFamosos h3 {
-    font-size: 1.5rem;
-    font-weight: bolder;
-    background-color: #d4188c;
-    width: 100%;
-    color: beige;
-    box-shadow: 0 1px 15px #333b3b;
-    margin-bottom: 1rem; }
-  #conteinerFamosos p {
-    margin-bottom: 0.2rem; }
-
-/*------------FIN FAMOSOS-------------*/
 /*----------FOOTER------*/
 footer {
   grid-area: f;
