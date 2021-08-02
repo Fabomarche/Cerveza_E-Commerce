@@ -30,6 +30,8 @@ const aniadir = (estilo) => {
             total.innerHTML = (subtotalANum * 1.21).toFixed(2)
         };
     
+    
+
     creadorLatasEnCarrito();
     if(estilo.stock !== 0){
     cantidadDeLatas += 1
@@ -41,6 +43,7 @@ const aniadir = (estilo) => {
     .hover(()=>{$("#carritoLink").css("backgroundColor","#d4188c")},
     ()=>{$("#carritoLink").css("backgroundColor","#222222")}
     );//animacion boton carrito en header
+    
     
     estilo.stock -= 1;
     CardsCreator(); 

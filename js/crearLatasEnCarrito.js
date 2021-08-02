@@ -12,8 +12,6 @@ const creadorLatasEnCarrito = () => {
             mostrarLatas += view});
 
         $('#listaDeLatas').html(mostrarLatas)});
-    
-
 }
     
     

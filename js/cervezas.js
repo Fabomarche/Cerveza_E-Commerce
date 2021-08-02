@@ -34,4 +34,4 @@ var maltosasArray = [stoutImperio, britishRed];
 var sourArray = [mandagose, pinky];
 var lagerArray = [rice, pilsen];
 
-var todasCervezasArray = [lupuladasArray, maltosasArray, sourArray, lagerArray];
+var todasCervezasArray = [microIpa, ipaYanky, brutIpa, hoppySaison, stoutImperio, britishRed, mandagose, pinky, rice, pilsen];

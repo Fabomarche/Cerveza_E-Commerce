@@ -1,8 +1,20 @@
-const CardsCreator = () => {
-    let showCards = '';
 
-    for(i=0; i<todasCervezasArray.length; i++){
-        todasCervezasArray[i].forEach(cerveza => showCards += 
+
+const CardsCreator = (seleccionFiltroLatas) => {
+    let showCards = '';
+    let filtroLatas = ()=> {
+        if($("#filtroEstilos").val() == "todas"){
+            seleccionFiltroLatas = todasCervezasArray;
+        }else{
+            seleccionFiltroLatas = $("#filtroEstilos").val() + "Array";
+        }
+        
+    };
+   
+    filtroLatas();
+    console.log(seleccionFiltroLatas);
+
+    seleccionFiltroLatas.map(cerveza => showCards += 
         `<div class="card" id="card-${cerveza.id}">
             <div class="card-image">
                 <img src="${cerveza.rutaImagen}" alt="lata de cerveza ${cerveza.nombre}">
@@ -14,10 +26,12 @@ const CardsCreator = () => {
                 <li class="item-card-list price">$ ${cerveza.precio}</li>
             </ul>
             <button class="card-btn" onclick="aniadir(${cerveza.id})">Agregar</button>
-        </div>`);
-    }
+        </div>`)
+
     $('.cards-group').html(showCards);
 }
     
 
 CardsCreator();
+
+$("#filtroEstilos").on('change', ()=>{CardsCreator()});

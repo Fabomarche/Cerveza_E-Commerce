@@ -27,10 +27,24 @@ header {
   height: 80px;
   background-color: #222;
   box-shadow: 0 1px 15px #333b3b;
-  z-index: 2; }
-  header .logoLaurusHeader {
-    width: 10%;
-    height: auto; }
+  z-index: 2;
+  /*     .logoLaurusHeader{
+        width: 10%;
+        height: auto;
+    } */ }
+  header #filtroEstilos {
+    grid-area: select;
+    align-self: center;
+    font-size: 1.5rem;
+    background-color: #354a50;
+    color: beige;
+    font-weight: bolder;
+    border: none;
+    width: fit-content;
+    height: auto;
+    margin-left: 1rem;
+    padding: 0.5rem;
+    border-radius: 25px; }
   header #carritoLink {
     display: flex;
     background-color: #222;
@@ -81,7 +95,7 @@ header {
 main {
   grid-area: m;
   display: grid;
-  grid-template-areas: "logo logo" "latas carrito";
+  grid-template-areas: "logo logo" "select select" "latas carrito";
   flex-direction: column;
   align-items: flex-start; }
   main .logoLaurus {
@@ -200,7 +214,7 @@ main {
 .contadorMismaLata {
   display: flex;
   flex-direction: row;
-  align-items: center; }
+  /* align-items: center; */ }
   .contadorMismaLata .numMiniLatas {
     font-size: 1.5rem; }
   .contadorMismaLata .flechasContadorLatas {
@@ -259,12 +273,19 @@ main {
     #packDelComprador .imagenLataChica .miniImagenLatas {
       width: 100%; }
 
-.cerrar {
+.cerrar, .cerrarLata {
   display: flex;
   flex-direction: row-reverse;
   color: beige;
   cursor: pointer;
   font-weight: bolder; }
+
+.cerrar:hover, .cerrarLata:hover {
+  color: #ff004c; }
+
+.cerrarLata {
+  font-size: 0.7rem;
+  margin-left: 0.25rem; }
 
 /*------------PACK DE LATAS END------*/
 /*----------FOOTER------*/

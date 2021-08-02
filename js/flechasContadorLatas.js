@@ -52,3 +52,27 @@ const sumarLata = (lata) => {
                 }
             });}
 }
+
+
+const sacarLata = (lata) => {
+    pedido = pedido.filter((lataFiltrar) => {
+        return lataFiltrar.id !== lata.id;
+    })
+    creadorLatasEnCarrito()
+    cantidadDeLatas -= lata.unidadesPedidas;
+    numeroDeLatas.innerText = cantidadDeLatas.toString();
+    mnjCantidadLatas.innerText = cantidadDeLatas.toString();
+
+    subtotalANum -= lata.precio * lata.unidadesPedidas;
+    subtotal.innerHTML = subtotalANum;
+    total.innerHTML = (subtotalANum * 1.21).toFixed(2);
+    creadorLatasEnCarrito();
+
+    lata.stock += lata.unidadesPedidas;
+    CardsCreator();
+}
+
+/* $("#sacarLata").hover(()=>{
+    $("#containerElementoLata p,  #containerElementoLata button, #containerElementoLata a").css({"color":"#990000"})}, 
+    ()=>{$("#containerElementoLata p,  #containerElementoLata button, #containerElementoLata a").css({"color":"#F5F5DC"})}
+    ); */

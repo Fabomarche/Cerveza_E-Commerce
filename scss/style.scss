@@ -29,18 +29,33 @@ header {
     top: 0px;
     left: 0px;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     height: 80px;
     background-color: #222;
     box-shadow: 0 1px 15px rgb(51, 59, 59);
     z-index: 2;
 
-    .logoLaurusHeader{
+/*     .logoLaurusHeader{
         width: 10%;
         height: auto;
-    }
+    } */
 
+    #filtroEstilos{
+        grid-area: select;
+        align-self: center;
+        font-size: 1.5rem;
+        background-color: rgb(53, 74, 80);
+        color: beige;
+        font-weight: bolder;
+        border: none;
+        width: fit-content;
+        height: auto;
+        margin-left: 1rem;
+        padding: 0.5rem;
+        border-radius: 25px;
+    }
+    
     #carritoLink{
         display: flex;
         background-color: #222;
@@ -105,10 +120,11 @@ main{
     grid-area:m;
     display:grid;
     grid-template-areas: "logo logo"
+                        "select select"
                         "latas carrito";
     flex-direction: column;
     align-items: flex-start;
-
+    
     .logoLaurus{
         background-color: white;
         grid-area: logo;
@@ -125,6 +141,7 @@ main{
             height: auto;
         }
     }
+
 }
 /*----------CARDS-------*/
     .cards-group{
@@ -269,7 +286,7 @@ main{
 .contadorMismaLata{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    /* align-items: center; */
     .numMiniLatas{
         font-size: 1.5rem;
         }
@@ -322,6 +339,7 @@ main{
         color: beige;
     }
 
+
     .contenedorMiniLata{
         display: flex;
         flex-direction: row;
@@ -363,6 +381,16 @@ main{
     cursor: pointer;
     font-weight: bolder;
     
+}
+
+.cerrar:hover{
+    color: rgb(255, 0, 76);
+}
+
+.cerrarLata{
+    @extend .cerrar;
+    font-size: 0.7rem;
+    margin-left: 0.25rem;
 }
 
 /*------------PACK DE LATAS END------*/
