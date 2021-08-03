@@ -68,7 +68,12 @@ const sacarLata = (lata) => {
     total.innerHTML = (subtotalANum * 1.21).toFixed(2);
     creadorLatasEnCarrito();
 
-    lata.stock += lata.unidadesPedidas;
+    if(lata.unidadesPedidas == 0){
+        lata.unidadesPedidas = 1;
+    }else{
+        lata.stock += lata.unidadesPedidas;
+    }
+    
     CardsCreator();
 }
 

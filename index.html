@@ -16,7 +16,7 @@
 <body>
     <header>
         
-        <select name="filtroEstilos" id="filtroEstilos">
+        <select name="filtroEstilos" id="filtroEstilos" onchange="CardsCreator()">
             <option value="todas" id="todasCervezasArray">Todas</option>
             <option value="lupuladas" id="lupuladasArray">Lupuladas</option>
             <option value="maltosas" id="maltosasArray">Maltosas</option>
@@ -113,22 +113,23 @@
 
     </div> 
 
+    <div id="mostrarImageModal" class="imageModalBakcgroud"></div>
 
     
     <!---------------------------------SCRIPTS------------------------------>
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/screenAdaptation.js"></script>
-    <script src="./js/mayor18.js"></script>
+    <script src="./js/functions/mayor18.js"></script>
     <script src="./js/cervezas.js"></script>
-    <script src="./js/crearCardsCervezas.js"></script>
+    <script src="./js/functions/crearCardsCervezas.js"></script>
+    <script src="./js/functions/imageModal.js"></script>
     <script src="./js/usuarioConstructor.js"></script>
-    <script src="./js/iniciarSesion.js"></script>
-    <script src="./js/crearLatasEnCarrito.js"></script>
-    <script src="./js/aniadirAlCarrito.js"></script>
-    <script src="./js/flechasContadorLatas.js"></script>
-    <!-- <script src="./js/main.js"></script> -->
-    
+    <script src="./js/functions/iniciarSesion.js"></script>
+    <script src="./js/functions/crearLatasEnCarrito.js"></script>
+    <script src="./js/functions/aniadirAlCarrito.js"></script>
+    <script src="./js/functions/flechasContadorLatas.js"></script>
+
 <!----------------------------FIN SCRIPTS------------------------------>
 </body>
 </html>

@@ -137,7 +137,11 @@ main {
       width: 65%; }
     .cards-group .card img {
       max-width: 100%;
-      height: auto; }
+      height: auto;
+      cursor: pointer;
+      transition: 0.3s; }
+    .cards-group .card img:hover {
+      background-color: rgba(0, 64, 82, 0.2); }
     .cards-group .card .card-title {
       font-size: 3vh;
       font-weight: bolder;
@@ -410,6 +414,74 @@ footer {
   border-radius: 45px; }
 
 /*--------SWEET ALERT END-----------*/
+/*-----------IMAGE MODAL-----------*/
+.imageModalBakcgroud {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 64, 82, 0.89);
+  transition: 1s; }
+
+.imageModalContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  height: auto; }
+  .imageModalContent .textoModal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+    padding: 1rem;
+    border-radius: 25px;
+    width: 28%;
+    text-align: center;
+    box-shadow: 0 1px 15px black; }
+  .imageModalContent h5 {
+    font-size: 3rem;
+    font-weight: bolder;
+    background-color: #d4188c;
+    border-radius: 12px;
+    width: 100%;
+    height: fit-content;
+    color: beige;
+    box-shadow: 0 1px 15px #333b3b; }
+  .imageModalContent p {
+    font-size: 1.4rem;
+    color: beige;
+    width: 100%;
+    height: 25%;
+    margin-top: 1rem; }
+  .imageModalContent img {
+    width: 27%;
+    border-radius: 25px;
+    margin-right: 1rem;
+    -webkit-filter: drop-shadow(-25px 25px 25px #222);
+    filter: drop-shadow(-25px 25px 25px #222); }
+
+.closeModal {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: beige;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s; }
+
+.closeModal:hover,
+.closeModal:focus {
+  color: #d4188c;
+  text-decoration: none;
+  cursor: pointer; }
+
+/*-----------IMAGE MODAL END-----------*/
 /*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
 /*------------------------@ MEDIAS QUERY @-----------------------------------*/
 /*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
@@ -417,6 +489,9 @@ footer {
 @media only screen and (min-width: 360px) and (max-width: 576px) {
   header {
     height: 60px; }
+    header #filtroEstilos {
+      font-size: 0.8rem;
+      margin-right: 1rem; }
     header #btnLogIn {
       font-size: 1rem;
       padding: 0.7rem; }
@@ -520,6 +595,8 @@ footer {
 /*------------------CELLPHONE END------------------*/
 /*-------------------TABLETS-------------------------*/
 @media only screen and (min-width: 576px) and (max-width: 768px) {
+  header #filtroEstilos {
+    font-size: 1rem; }
   /*----------CARDS-------*/
   .cards-group .card {
     width: 40%; }

@@ -19,10 +19,12 @@ const aniadir = (estilo) => {
     let index = pedido.findIndex(birra => birra.id == estilo.id);
         
     if(index != -1) {
+        if(estilo.stock !=0){
             pedido[index].unidadesPedidas += 1;
             subtotalANum += pedido[index].precio;
             subtotal.innerHTML = subtotalANum;
             total.innerHTML = (subtotalANum * 1.21).toFixed(2)
+        }
         }else{
             pedido.unshift(estilo);
             subtotalANum += pedido[0].precio;
