@@ -637,9 +637,9 @@ footer {
 .closeModal {
     position: absolute;
     top: 15px;
-    right: 35px;
+    right: 45px;
     color: beige;
-    font-size: 40px;
+    font-size: 4rem;
     font-weight: bold;
     transition: 0.3s;
 }
@@ -655,8 +655,8 @@ footer {
 /*-----------IMAGE MODAL END-----------*/
 
 /*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
-/*------------------------@ MEDIAS QUERY @-----------------------------------*/
-/*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+/*----------------------------@ MEDIAS QUERY @-----------------------------------*/
+/*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
 
 /*------------------CELLPHONE------------------*/
 @media only screen and  (min-width: 360px) and (max-width: 576px){
@@ -769,9 +769,8 @@ footer {
     background-color: #111;
 
     p{
-       font-size: 0.7rem;
-       margin: 0 0 1% 0;
-
+    font-size: 0.7rem;
+    margin: 0 0 1% 0;
     }
     
     
@@ -783,9 +782,6 @@ footer {
             width: 1.2rem;
         }
     }
-    
-  
-  
 }
 
 /*----------FOOTER END------*/
@@ -811,7 +807,6 @@ footer {
             width: 35%;
             margin: 2% 1% 2% 1%;
         }
- 
     }
 }
 /*------------MODAL END----------*/
@@ -852,6 +847,11 @@ footer {
     z-index: 2;
     }
 
+    .closeModal {
+        right: 20px;
+        font-size: 2.5rem;
+    }
+
     h5{
         font-size: 1rem;
         font-weight: bolder;
@@ -869,7 +869,7 @@ footer {
     }
 
     img{
-        width: 68%;
+        width: 65%;
         margin: 0;
     }
 

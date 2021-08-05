@@ -1,4 +1,4 @@
-var mostrarModal;
+var mostrarModal;//container para modal imagen lata
 
 const creadorImageModal = (estilo) => {
     mostrarModal = `
@@ -12,9 +12,12 @@ const creadorImageModal = (estilo) => {
             <p >Stock: <span id="modalStock">${estilo.stock}</span></p>
         </div>
     </div>`
+
 $('#mostrarImageModal').html(mostrarModal);
+
 $(".imageModalBackground").css("display","block")
 .animate({"opacity":"1"});
+
 $(".imageModalContent").animate({"opacity":"1"},500,"swing");
 $(".textoModal").slideDown(1000,"swing");
 
@@ -27,7 +30,7 @@ $(".closeModal").click(()=>{
 
 const flashBackground = () => {
     $(".imageModalBackground").animate({"backgroundColor":"beige"},100).animate({"backgroundColor":"transparent"},1000);
-}; 
+}; //animacion para evidenciar la suma al carrito de la lata en el modal
 
 
 

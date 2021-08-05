@@ -1,7 +1,7 @@
 const CardsCreator = () => {
     let showCards = '';
     let seleccionFiltroLatas="";
-    /* seleccionFiltroLatas = todasCervezasArray; */
+    
     let filtroLatas = ()=> {
         if($("#filtroEstilos").val() == "todas"){
             seleccionFiltroLatas = todasCervezasArray;
@@ -26,8 +26,6 @@ const CardsCreator = () => {
     };
 
     filtroLatas();
-    
-    
 
     seleccionFiltroLatas.map(cerveza => showCards += 
         `<div class="card" id="card-${cerveza.id}">

@@ -1,4 +1,3 @@
-//Objeto para crear Usuarios
 function Usuario(nombre, apellido, direccion, edad){
     this.nombre = nombre,
     this.apellido = apellido,

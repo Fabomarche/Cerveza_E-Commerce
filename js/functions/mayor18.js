@@ -9,7 +9,6 @@ $("#siBtn").click( () => {
 })
 
 const no18 = () => {
-
     textModal.innerText = "La venta a menores de 18 años esta prohíbida. No podés ingresar a este sitio";
     textModal.style.color = "rgb(212, 24, 140)"
     siBtn.style.display = "none";

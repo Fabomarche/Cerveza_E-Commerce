@@ -5,18 +5,12 @@ var nombre = document.getElementById("nameform");
 var apellido = document.getElementById("lastname");
 var direccion = document.getElementById("direction");
 
-
-/* const iniciarSesionBtn = () => {
-    iniciarSesion.style.display = "block";
-} */
-
-
+//Botón Header
 $("#btnLogIn").click( () => {
     $("#iniciarSesion").fadeIn(500);
 })
 
-
-
+//Boton dentro del Form del Log in
 $('#logInBtn').click((event) => {
     event.preventDefault();
     if(nameform.value == "" || lastname.value == "" || direccion.value == ""){
@@ -49,7 +43,6 @@ $('#logInBtn').click((event) => {
     });
     }}
     );
-
     
     const imprimirDatosEnCarrito= () => {
     let usuarioSessionStorage = JSON.parse(sessionStorage.getItem("nuevoUsuario"));

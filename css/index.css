@@ -473,9 +473,9 @@ footer {
 .closeModal {
   position: absolute;
   top: 15px;
-  right: 35px;
+  right: 45px;
   color: beige;
-  font-size: 40px;
+  font-size: 4rem;
   font-weight: bold;
   transition: 0.3s; }
 
@@ -487,8 +487,8 @@ footer {
 
 /*-----------IMAGE MODAL END-----------*/
 /*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
-/*------------------------@ MEDIAS QUERY @-----------------------------------*/
-/*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+/*----------------------------@ MEDIAS QUERY @-----------------------------------*/
+/*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
 /*------------------CELLPHONE------------------*/
 @media only screen and (min-width: 360px) and (max-width: 576px) {
   header {
@@ -601,6 +601,9 @@ footer {
       border-radius: 12px;
       width: 80%;
       z-index: 2; }
+    .imageModalContent .closeModal {
+      right: 20px;
+      font-size: 2.5rem; }
     .imageModalContent h5 {
       font-size: 1rem;
       font-weight: bolder;
@@ -614,7 +617,7 @@ footer {
       font-size: 0.8rem;
       margin-top: 0.5rem; }
     .imageModalContent img {
-      width: 68%;
+      width: 65%;
       margin: 0; }
     .imageModalContent .modal-btn {
       font-size: 0.8rem;

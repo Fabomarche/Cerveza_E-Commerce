@@ -13,8 +13,7 @@ const restarLata = (lata) => {
 
         lata.stock += 1;
         CardsCreator(); 
-    }
-    
+    }   
 }
 
 const sumarLata = (lata) => {
@@ -74,13 +73,7 @@ const sacarLata = (lata) => {
         lata.stock += lata.unidadesPedidas;
         lata.unidadesPedidas = 1;
     }
-
-
     
     CardsCreator();
 }
 
-/* $("#sacarLata").hover(()=>{
-    $("#containerElementoLata p,  #containerElementoLata button, #containerElementoLata a").css({"color":"#990000"})}, 
-    ()=>{$("#containerElementoLata p,  #containerElementoLata button, #containerElementoLata a").css({"color":"#F5F5DC"})}
-    ); */

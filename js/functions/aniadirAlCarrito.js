@@ -1,18 +1,18 @@
-var numeroDeLatas = document.getElementById("numeroDeLatas");
+var numeroDeLatas = document.getElementById("numeroDeLatas");//Header
 var pagarBtn = document.getElementById("pagarBtn");
 
 
 var cantidadDeLatas = 0; //Número de latas en carrito HEADER
-var mnjCantidadLatas = document.getElementById("mnjCantidadLatas")//en msj final carrito
+var mnjCantidadLatas = document.getElementById("mnjCantidadLatas")//número que aprece en el carrito de cantidad de latas
 
 var subtotal = document.getElementById("subtotal");
 var subtotalANum = parseInt((document.getElementById("subtotal")).innerText);
 
 var total = document.getElementById("total");
 
-var pedido =[];//Carrito de pédido
+var pedido = [];//Carrito de pédido
 
-const listaDeLatas = document.getElementById("listaDeLatas")
+const listaDeLatas = document.getElementById("listaDeLatas")//Container en el Pack de mini Latas
 
 
 const aniadir = (estilo) => {
@@ -44,11 +44,12 @@ const aniadir = (estilo) => {
     ()=>{$("#carritoLink").css("backgroundColor","#222222")}
     );//animacion boton carrito en header
     
-    
     estilo.stock -= 1;
+
     if ($('#mostrarImageModal').css("display") == "block"){
         $("#modalStock").html(estilo.stock)
-    }
+    }//contador stock en Modal Imagen Lata
+
     CardsCreator(); 
     }else{
         Swal.fire({
