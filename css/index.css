@@ -27,11 +27,7 @@ header {
   height: 80px;
   background-color: #222;
   box-shadow: 0 1px 15px #333b3b;
-  z-index: 2;
-  /*     .logoLaurusHeader{
-        width: 10%;
-        height: auto;
-    } */ }
+  z-index: 2; }
   header #filtroEstilos {
     grid-area: select;
     align-self: center;
@@ -126,7 +122,7 @@ main {
     align-items: center;
     background-color: #EEE;
     border: 1px solid #222;
-    width: 25%;
+    width: 20%;
     height: 100%;
     overflow: hidden;
     margin: 1rem;
@@ -134,9 +130,9 @@ main {
     box-shadow: -3px 6px 15px #333b3b;
     border-radius: 12px; }
     .cards-group .card .card-image {
-      width: 65%; }
+      width: 25%; }
     .cards-group .card img {
-      max-width: 100%;
+      width: 100%;
       height: auto;
       cursor: pointer;
       transition: 0.3s; }
@@ -160,7 +156,6 @@ main {
 
 .card-btn {
   text-align: center;
-  width: 80%;
   height: auto;
   padding: 0.5rem;
   margin: 0 0 0.5rem 0;

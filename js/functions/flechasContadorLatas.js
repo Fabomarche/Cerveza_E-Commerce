@@ -72,7 +72,10 @@ const sacarLata = (lata) => {
         lata.unidadesPedidas = 1;
     }else{
         lata.stock += lata.unidadesPedidas;
+        lata.unidadesPedidas = 1;
     }
+
+
     
     CardsCreator();
 }
