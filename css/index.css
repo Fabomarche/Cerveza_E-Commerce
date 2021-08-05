@@ -70,7 +70,7 @@ header {
   height: auto;
   margin-right: 25px; }
 
-.btn, .cards-group .card .card-btn, #modalBackground #modalContent .modalBtns, .btn-logIn {
+.btn, .card-btn, #modalBackground #modalContent .modalBtns, .btn-logIn {
   font-family: 'Montserrat', sans-serif;
   width: fit-content;
   color: beige;
@@ -86,7 +86,7 @@ header {
   cursor: pointer;
   transition: 0.5s; }
 
-.btn:hover, .cards-group .card .card-btn:hover, #modalBackground #modalContent .modalBtns:hover, .btn-logIn:hover {
+.btn:hover, .card-btn:hover, #modalBackground #modalContent .modalBtns:hover, .btn-logIn:hover {
   transition: 0.5s;
   background-color: #d4188c; }
 
@@ -157,17 +157,19 @@ main {
       color: beige; }
     .cards-group .card .price {
       font-weight: bolder; }
-    .cards-group .card .card-btn {
-      text-align: center;
-      width: 80%;
-      height: auto;
-      padding: 0.5rem;
-      margin: 0 0 0.5rem 0;
-      border-radius: 0px;
-      width: 100%;
-      margin-bottom: 0; }
-    .cards-group .card .card-btn:hover {
-      background-color: #d4188c; }
+
+.card-btn {
+  text-align: center;
+  width: 80%;
+  height: auto;
+  padding: 0.5rem;
+  margin: 0 0 0.5rem 0;
+  border-radius: 0px;
+  width: 100%;
+  margin-bottom: 0; }
+
+.card-btn:hover {
+  background-color: #d4188c; }
 
 /*----------CARDS END-------*/
 /*----------SHOPPPING CART------*/
@@ -415,7 +417,8 @@ footer {
 
 /*--------SWEET ALERT END-----------*/
 /*-----------IMAGE MODAL-----------*/
-.imageModalBakcgroud {
+.imageModalBackground {
+  opacity: 0;
   display: none;
   position: fixed;
   z-index: 2;
@@ -423,10 +426,10 @@ footer {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 64, 82, 0.89);
-  transition: 1s; }
+  background: linear-gradient(-33deg, rgba(78, 9, 52, 0.89), rgba(0, 64, 82, 0.89)); }
 
 .imageModalContent {
+  opacity: 0;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -434,7 +437,7 @@ footer {
   justify-content: center;
   height: auto; }
   .imageModalContent .textoModal {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -452,19 +455,21 @@ footer {
     width: 100%;
     height: fit-content;
     color: beige;
-    box-shadow: 0 1px 15px #333b3b; }
+    box-shadow: 0 1px 15px #002129; }
   .imageModalContent p {
     font-size: 1.4rem;
     color: beige;
     width: 100%;
-    height: 25%;
     margin-top: 1rem; }
   .imageModalContent img {
     width: 27%;
-    border-radius: 25px;
     margin-right: 1rem;
     -webkit-filter: drop-shadow(-25px 25px 25px #222);
     filter: drop-shadow(-25px 25px 25px #222); }
+  .imageModalContent .modal-btn {
+    width: 75%;
+    border-radius: 25px;
+    margin-top: 0.5rem; }
 
 .closeModal {
   position: absolute;
@@ -589,8 +594,33 @@ footer {
     padding: 0.5rem;
     margin: 0.5rem; }
   /*----------INICIO DE SESION END--------*/
-  /*--------SWEET ALERT -----------*/
-  /*--------SWEET ALERT END-----------*/ }
+  /*-----------IMAGE MODAL-----------*/
+  .imageModalContent {
+    flex-direction: column; }
+    .imageModalContent .textoModal {
+      padding: 0.5rem;
+      border-radius: 12px;
+      width: 80%;
+      z-index: 2; }
+    .imageModalContent h5 {
+      font-size: 1rem;
+      font-weight: bolder;
+      background-color: #d4188c;
+      border-radius: 12px;
+      width: 100%;
+      height: fit-content;
+      color: beige;
+      box-shadow: 0 1px 15px #002129; }
+    .imageModalContent p {
+      font-size: 0.8rem;
+      margin-top: 0.5rem; }
+    .imageModalContent img {
+      width: 68%;
+      margin: 0; }
+    .imageModalContent .modal-btn {
+      font-size: 0.8rem;
+      width: 50%; }
+  /*-----------IMAGE MODAL END-----------*/ }
 
 /*------------------CELLPHONE END------------------*/
 /*-------------------TABLETS-------------------------*/
@@ -612,7 +642,34 @@ footer {
       font-size: 1rem; }
     #packDelComprador p {
       margin: 0.2rem 0 0.2rem 0;
-      font-size: 1rem; } }
+      font-size: 1rem; }
+  /*-----------IMAGE MODAL-----------*/
+  .imageModalContent {
+    flex-direction: column; }
+    .imageModalContent .textoModal {
+      padding: 0.5rem;
+      border-radius: 12px;
+      width: 85%;
+      z-index: 2; }
+    .imageModalContent h5 {
+      font-size: 2rem;
+      font-weight: bolder;
+      background-color: #d4188c;
+      border-radius: 12px;
+      width: 100%;
+      height: fit-content;
+      color: beige;
+      box-shadow: 0 1px 15px #002129; }
+    .imageModalContent p {
+      font-size: 1rem;
+      margin-top: 0.2rem; }
+    .imageModalContent img {
+      width: 60%;
+      margin: 0; }
+    .imageModalContent .modal-btn {
+      font-size: 1rem;
+      width: 25%; }
+  /*-----------IMAGE MODAL END-----------*/ }
 
 /*-------------------TABLETS ENDS-------------------------*/
 /*--------------------------MEDIAS QUERY END-------------------------------*/
