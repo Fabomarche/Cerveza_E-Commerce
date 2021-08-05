@@ -32,15 +32,13 @@ const aniadir = (estilo) => {
             total.innerHTML = (subtotalANum * 1.21).toFixed(2)
         };
     
-    
-
     creadorLatasEnCarrito();
     if(estilo.stock !== 0){
     cantidadDeLatas += 1
     numeroDeLatas.innerText = cantidadDeLatas.toString();
     mnjCantidadLatas.innerText = cantidadDeLatas.toString();
 
-
+    
     $("#carritoLink").animate({"backgroundColor":"#d4188c"},100).animate({"backgroundColor":"#222222"},200)
     .hover(()=>{$("#carritoLink").css("backgroundColor","#d4188c")},
     ()=>{$("#carritoLink").css("backgroundColor","#222222")}
@@ -48,6 +46,9 @@ const aniadir = (estilo) => {
     
     
     estilo.stock -= 1;
+    if ($('#mostrarImageModal').css("display") == "block"){
+        $("#modalStock").html(estilo.stock)
+    }
     CardsCreator(); 
     }else{
         Swal.fire({
@@ -96,33 +97,31 @@ const resetCarrito = () => {
 } 
 
 $("#pagarBtn").click( () => {
-    if (sessionStorage.getItem("nuevoUsuario") == null) {
-        $("#iniciarSesion").slideDown(500)
-    }else{
-        Swal.fire({
-            background: "white",
-            title: "¡Compra Confirmada!",
-            text: "A brindar...",
-            icon: "success",
-            allowOutsideClick: true,
-            allowEscapeKey: true,
-            allowEnterKey: true,
-            backdrop: true,
-            confirmButtonText: "Salud!",
-            buttonsStyling: false,
-            customClass: {
-                popup: 'popupSwal',
-                confirmButton: 'btn',               
-            }
-        });
-        resetCarrito();
+    if(subtotalANum > 0){
+        if (sessionStorage.getItem("nuevoUsuario") == null) {
+            $("#iniciarSesion").slideDown(500)
+        }else{
+            Swal.fire({
+                background: "white",
+                title: "¡Compra Confirmada!",
+                text: "A brindar...",
+                icon: "success",
+                allowOutsideClick: true,
+                allowEscapeKey: true,
+                allowEnterKey: true,
+                backdrop: true,
+                confirmButtonText: "Salud!",
+                buttonsStyling: false,
+                customClass: {
+                    popup: 'popupSwal',
+                    confirmButton: 'btn',               
+                }
+            });
+            resetCarrito();
+        }
     }
+    
 });
 
-
-const sacarMensajeGracias = () => {
-    gracias.style.display = "none";
-    
-}
 
 

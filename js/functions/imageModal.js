@@ -9,6 +9,7 @@ const creadorImageModal = (estilo) => {
             <h5>${estilo.nombre}</h5>
             <p>${estilo.descripcion}</p>
             <button class="card-btn modal-btn" onclick="aniadir(${estilo.id});flashBackground()">Agregar</button>
+            <p >Stock: <span id="modalStock">${estilo.stock}</span></p>
         </div>
     </div>`
 $('#mostrarImageModal').html(mostrarModal);

@@ -17,7 +17,10 @@ $("#btnLogIn").click( () => {
 
 
 
-$('#logInBtn').click(() => {
+$('#logInBtn').click((event) => {
+    event.preventDefault();
+    if(nameform.value == "" || lastname.value == "" || direccion.value == ""){
+    }else{
     let nombre = document.getElementById("nameform").value;
     let apellido = document.getElementById("lastname").value;
     let direccion = document.getElementById("direction").value;
@@ -28,51 +31,27 @@ $('#logInBtn').click(() => {
     imprimirDatosEnCarrito();
     $("#iniciarSesion").fadeOut(500, ()=>{Swal.fire({
         background: "white",
-        title: "¡Bienvenido!",
-        text: "Ud. ya esta logueado...",
+        title: "¡Bienvenido/a!",
+        text: "Ud. ya esta logueado/a... Puede continuar con su compra",
         icon: "success",
         allowOutsideClick: true,
         allowEscapeKey: true,
         allowEnterKey: true,
         backdrop: true,
-        confirmButtonText: "Pagar",
+        confirmButtonText: "Continuar",
         buttonsStyling: false,
-        showCancelButton: true,
-        cancelButtonText: "Continuar",
         customClass: {
             popup: "popupSwal",
             confirmButton: 'btn',
             cancelButton: 'btn',   
-        }
-        
-    }).then((resultado) => {
-        if (resultado.isConfirmed) {
-            Swal.fire({
-                background: "white",
-                title: "¡Compra Confirmada!",
-                text: "A brindar...",
-                icon: "success",
-                allowOutsideClick: true,
-                allowEscapeKey: true,
-                allowEnterKey: true,
-                backdrop: true,
-                confirmButtonText: "Salud!",
-                buttonsStyling: false,
-                customClass: {
-                    popup: 'popupSwal',
-                    confirmButton: 'btn', 
-                }
-            });
-            resetCarrito();
-          } 
-          
+        }  
+    })
     });
-    });
-    }
+    }}
     );
 
     
-const imprimirDatosEnCarrito= () => {
+    const imprimirDatosEnCarrito= () => {
     let usuarioSessionStorage = JSON.parse(sessionStorage.getItem("nuevoUsuario"));
     nombreID.innerHTML = usuarioSessionStorage.nombre + " " + usuarioSessionStorage.apellido;
     direccionID.innerHTML = usuarioSessionStorage.direccion;
