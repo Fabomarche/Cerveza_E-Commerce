@@ -115,8 +115,8 @@ $("#pagarBtn").click( () => {
                 confirmButton: 'btn',               
             }
         });
-        resetCarrito();
     }
+    resetCarrito();
 });
 
 
