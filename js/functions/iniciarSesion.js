@@ -63,7 +63,9 @@ $('#logInBtn').click(() => {
                     confirmButton: 'btn', 
                 }
             });
+            resetCarrito();
           } 
+          
     });
     });
     }
