@@ -457,9 +457,9 @@ footer {
         justify-content: center;
         text-align: center;
         background-color: white;
-        margin: 7.5% auto;
+        margin: 8% auto;
         padding-bottom: 1rem;
-        width: 60%;
+        width: 50%;
         height: auto;
         border-radius: 25px;
         box-shadow: 0px 25px 75px rgb(58, 58, 58);
@@ -476,14 +476,14 @@ footer {
 
         #textModal{
             color: #222;
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: bolder;
             margin: 2% 10% 2% 10%;
         }
 
         .modalBtns{
             @extend .btn;
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: bolder;
             padding: 0 2% 0 2%;
             width: 25%;
@@ -519,7 +519,7 @@ footer {
         align-items: center;
         padding: 2rem;
         text-align: center;
-        background-color: white;
+        background-color: beige;
         margin: 7.5% auto;
         width: 50%;
         height: auto;
@@ -538,7 +538,13 @@ footer {
             font-weight: bolder;
             text-align: center;
             width: 75%;
+            border-radius: 25px
         }
+
+        input:focus {
+            color: rgb(53, 74, 80);
+            background-color: rgba(212, 24, 140,0.2);
+          }
     
     }
 }
@@ -913,6 +919,27 @@ footer {
                 font-size: 1rem;
             }
     }
+
+/*---------MODAL BOX 18------*/
+#modalBackground{
+    #modalContent{
+        margin: 30% auto;
+        width: 80%;
+        height: auto;
+        border-radius: 25px;
+        box-shadow: 0px 25px 75px rgb(58, 58, 58);
+
+        #modalLogoLaurus{
+            width: 100%;
+            height: auto;
+            img{
+                max-width: 50%;
+                width: 100%;
+            }
+
+        }
+    }}
+/*---------MODAL BOX 18 END------*/
 
     /*-----------IMAGE MODAL-----------*/
 

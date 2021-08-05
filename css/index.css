@@ -334,9 +334,9 @@ footer {
     justify-content: center;
     text-align: center;
     background-color: white;
-    margin: 7.5% auto;
+    margin: 8% auto;
     padding-bottom: 1rem;
-    width: 60%;
+    width: 50%;
     height: auto;
     border-radius: 25px;
     box-shadow: 0px 25px 75px #3a3a3a; }
@@ -348,11 +348,11 @@ footer {
         width: 100%; }
     #modalBackground #modalContent #textModal {
       color: #222;
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: bolder;
       margin: 2% 10% 2% 10%; }
     #modalBackground #modalContent .modalBtns {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: bolder;
       padding: 0 2% 0 2%;
       width: 25%;
@@ -381,7 +381,7 @@ footer {
     align-items: center;
     padding: 2rem;
     text-align: center;
-    background-color: white;
+    background-color: beige;
     margin: 7.5% auto;
     width: 50%;
     height: auto;
@@ -396,7 +396,11 @@ footer {
       font-size: 2rem;
       font-weight: bolder;
       text-align: center;
-      width: 75%; }
+      width: 75%;
+      border-radius: 25px; }
+    #iniciarSesion #sesionContent input:focus {
+      color: #354a50;
+      background-color: rgba(212, 24, 140, 0.2); }
 
 .btn-logIn {
   width: 65%; }
@@ -638,6 +642,20 @@ footer {
     #packDelComprador p {
       margin: 0.2rem 0 0.2rem 0;
       font-size: 1rem; }
+  /*---------MODAL BOX 18------*/
+  #modalBackground #modalContent {
+    margin: 30% auto;
+    width: 80%;
+    height: auto;
+    border-radius: 25px;
+    box-shadow: 0px 25px 75px #3a3a3a; }
+    #modalBackground #modalContent #modalLogoLaurus {
+      width: 100%;
+      height: auto; }
+      #modalBackground #modalContent #modalLogoLaurus img {
+        max-width: 50%;
+        width: 100%; }
+  /*---------MODAL BOX 18 END------*/
   /*-----------IMAGE MODAL-----------*/
   .imageModalContent {
     flex-direction: column; }
