@@ -1,7 +1,7 @@
 const creadorLatasEnCarrito = () => {
     let mostrarLatas = '';
     
-    $.get("./html/mostrarLatas.html",  function(html) {
+    $.get("../html/mostrarLatas.html",  function(html) {
         
         pedido.forEach(lata => {
             let view = html;
